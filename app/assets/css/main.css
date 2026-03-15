@@ -1,2 +1,141 @@
+/* ─── Google Fonts — MUST be first ────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @import "tailwindcss";
-@import "@nuxt/ui"
+@import "@nuxt/ui";
+
+/* ─── Tailwind v4 Design Tokens (Stitch "Architectural Glass") ─── */
+@theme {
+  /* Surfaces */
+  --color-surface:           #0b1326;
+  --color-surface-dim:       #0b1326;
+  --color-surface-low:       #131b2e;
+  --color-surface-high:      #222a3d;
+  --color-surface-highest:   #2d3449;
+  --color-surface-bright:    #31394d;
+
+  /* Primary */
+  --color-primary:           #9accf9;
+  --color-primary-container: #3f729b;
+  --color-on-primary:        #003351;
+  --color-on-primary-dark:   #001d32;
+
+  /* Secondary */
+  --color-secondary:         #b6c9dc;
+  --color-secondary-container: #394b5b;
+  --color-on-secondary:      #203242;
+
+  /* Tertiary (Gold Accent) */
+  --color-tertiary:          #f3bd6f;
+  --color-tertiary-container: #906520;
+
+  /* On-surface */
+  --color-on-surface:        #dae2fd;
+  --color-on-surface-variant: #c1c7cf;
+
+  /* Borders */
+  --color-outline:           #8b9199;
+  --color-outline-variant:   #41474e;
+
+  /* Typography */
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-ambient: 0px 4px 20px rgba(0,0,0,0.4), 0px 0px 1px rgba(218,226,253,0.1);
+}
+
+/* ─── Base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Glass Panel Utility ───────────────────────── */
+.glass-panel {
+  background: color-mix(in srgb, var(--color-surface-high) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-on-surface-variant) 10%, transparent);
+}
+
+.glass-panel-subtle {
+  background: color-mix(in srgb, var(--color-surface-low) 60%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ─── Primary Gradient Utility ──────────────────── */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+}
+
+/* ─── Scroll-reveal animation ───────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal.is-visible {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Typography utilities ──────────────────────── */
+.display-lg {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.display-md {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.headline-lg {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.label-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
