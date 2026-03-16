@@ -7,48 +7,63 @@
           <p class="label-tag mb-3" style="color: var(--color-tertiary);">Conhecimento Compartilhado</p>
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Insights &amp; Tutorials</h2>
         </div>
-        <UButton
-          as="a"
-          href="/blog"
-          variant="ghost"
-          trailing-icon="i-heroicons-chevron-right"
-          class="shrink-0 font-semibold"
-          style="color: var(--color-primary);"
-        >View All Articles</UButton>
+        <UButton as="a" href="/blog" variant="ghost" trailing-icon="i-heroicons-chevron-right"
+          class="shrink-0 font-semibold" style="color: var(--color-primary);">View All Articles</UButton>
+      </div>
+
+      <!-- Loading State -->
+      <div v-if="pending" class="flex justify-center py-12">
+        <UIcon name="i-heroicons-arrow-path" class="w-8 h-8 animate-spin" style="color: var(--color-primary);" />
+      </div>
+
+      <!-- Error State -->
+      <div v-else-if="error" class="text-center py-12" style="color: var(--color-error);">
+        Erro ao carregar os artigos do blog.
       </div>
 
       <!-- Blog cards grid -->
-      <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <li
-          v-for="(post, i) in posts"
-          :key="post.title"
-          class="reveal glass-panel rounded-2xl overflow-hidden flex flex-col
+      <ul v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <li v-for="(post, i) in posts" :key="post.slug" class="reveal glass-panel rounded-2xl overflow-hidden flex flex-col
                  transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
-          :style="{ animationDelay: `${i * 0.1}s` }"
-        >
-          <!-- Color bar accent -->
-          <div class="h-1 gradient-primary shrink-0" />
+          :style="{ animationDelay: `${i * 0.1}s` }">
+          <!-- Cover Image -->
+          <div class="relative w-full h-48 sm:h-56 bg-zinc-800 shrink-0 overflow-hidden">
+            <img v-if="post.imagem" :src="post.imagem" :alt="post.titulo"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div v-else class="w-full h-full flex items-center justify-center opacity-50">
+              <UIcon name="i-heroicons-photo" class="w-10 h-10" />
+            </div>
+            <!-- Color bar accent -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 gradient-primary" />
+          </div>
 
           <div class="p-6 flex flex-col gap-4 flex-1">
             <!-- Meta -->
-            <div class="flex items-center gap-3">
-              <span
-                class="label-tag px-2.5 py-1 rounded-full"
-                style="background-color: var(--color-secondary-container); color: var(--color-secondary);"
-              >{{ post.category }}</span>
-              <span class="label-tag" style="color: var(--color-outline);">{{ post.date }}</span>
+            <div class="flex items-center gap-2 flex-wrap">
+              <template v-if="post.tags">
+                <span v-for="(tag, tagIdx) in post.tags.split(',')" :key="tagIdx"
+                  class="label-tag px-2.5 py-1 rounded-full truncate max-w-[150px]"
+                  style="background-color: var(--color-secondary-container); color: var(--color-secondary);">
+                  {{ tag.trim() }}
+                </span>
+              </template>
+              <span class="label-tag ml-1" style="color: var(--color-outline);">{{ post.date }}</span>
             </div>
 
-            <h3
-              class="text-base font-semibold leading-snug group-hover:opacity-80 transition-opacity"
-              style="color: var(--color-on-surface);"
-            >{{ post.title }}</h3>
-            <p class="text-sm leading-relaxed flex-1" style="color: var(--color-on-surface-variant);">{{ post.excerpt }}</p>
+            <h3 class="text-base font-semibold leading-snug group-hover:opacity-80 transition-opacity line-clamp-2"
+              style="color: var(--color-on-surface);">
+              <NuxtLink :to="`/blog/${post.slug}`" class="focus:outline-none">
+                <span class="absolute inset-0" aria-hidden="true"></span>
+                {{ post.titulo }}
+              </NuxtLink>
+            </h3>
 
-            <span
-              class="mt-auto flex items-center gap-1.5 text-sm font-semibold"
-              style="color: var(--color-primary);"
-            >
+            <p class="text-sm leading-relaxed flex-1 line-clamp-3" style="color: var(--color-on-surface-variant);">
+              {{ post.resumo }}
+            </p>
+
+            <span class="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold"
+              style="color: var(--color-primary);">
               Ler artigo
               <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
@@ -61,34 +76,27 @@
 
 <script setup lang="ts">
 import { useScrollReveal } from '~/composables/useScrollReveal'
+import axios from 'axios'
 
 interface BlogPost {
-  title: string
-  excerpt: string
-  category: string
+  imagem: string
+  titulo: string
+  slug: string
+  tags: string
   date: string
+  resumo: string
 }
 
-const posts: BlogPost[] = [
-  {
-    title: 'Construindo SPAs performáticas com Vue 3 e Vite',
-    excerpt: 'Como estruturar um projeto Vue 3 do zero priorizando performance e developer experience.',
-    category: 'Vue.js',
-    date: 'Mar 2026',
-  },
-  {
-    title: 'Tailwind CSS v4: O que mudou e como migrar',
-    excerpt: 'Análise completa das mudanças na nova versão do Tailwind com o novo sistema de tokens CSS-first.',
-    category: 'CSS',
-    date: 'Fev 2026',
-  },
-  {
-    title: 'FastAPI + Redis: APIs de baixa latência em produção',
-    excerpt: 'Padrões para criar microsserviços escaláveis com Python, FastAPI e cache Redis.',
-    category: 'Backend',
-    date: 'Jan 2026',
-  },
-]
+const { data: posts, pending, error } = useAsyncData('latest-blog-posts', async () => {
+  try {
+    const res = await axios.get<BlogPost[]>('https://tiagobernardes.com.br/api/blog/posts.json')
+    // Retorna apenas os 3 primeiros (últimos) posts
+    return res.data.slice(0, 3)
+  } catch (err) {
+    console.error('Failed to fetch blog posts:', err)
+    throw err
+  }
+})
 
 useScrollReveal()
 </script>
