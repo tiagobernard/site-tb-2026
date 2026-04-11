@@ -3,7 +3,7 @@
     <AppHero />
     <AppTechStack />
     <AppServices />
-    <AppPortfolio />
+    <AppPortfolio preview />
     <AppBlog />
     <AppContact />
   </div>

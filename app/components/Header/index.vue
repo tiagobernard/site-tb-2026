@@ -22,7 +22,7 @@
 
         <!-- CTA Desktop -->
         <div class="hidden md:flex items-center gap-3">
-          <UButton as="a" href="#contact" size="sm"
+          <UButton as="a" href="/#contact" size="sm"
             class="gradient-primary font-semibold transition-transform duration-200 hover:-translate-y-0.5"
             style="color: var(--color-on-primary); border: none;">
             Get in Touch
@@ -47,7 +47,7 @@
                 style="color: var(--color-on-surface);" @click="mobileOpen = false">{{ link.label }}</a>
             </li>
             <li class="pt-2">
-              <UButton as="a" href="#contact" size="sm" block class="gradient-primary font-semibold"
+              <UButton as="a" href="/#contact" size="sm" block class="gradient-primary font-semibold"
                 style="color: var(--color-on-primary); border: none;" @click="mobileOpen = false">
                 Get in Touch
               </UButton>
@@ -61,12 +61,12 @@
 
 <script setup lang="ts">
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'About', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Blog', href: '/#blog' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 const scrolled = ref(false)

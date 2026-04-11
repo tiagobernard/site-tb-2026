@@ -70,8 +70,7 @@
           <!-- Quote body -->
           <blockquote class="text-lg italic leading-relaxed mb-8" style="color: var(--color-on-surface);">
             "Curso Superior em Tecnologia no 5º período.
-            Atualmente focado em dominar o ecossistema moderno
-            com FastAPI, Docker e arquiteturas escaláveis."
+            Atualmente estou focado em GenAI, Gestão Ágil e Engenharia de Software de Alta Performance."
           </blockquote>
 
           <!-- Divider + location -->
@@ -95,7 +94,7 @@ import { useScrollReveal } from '~/composables/useScrollReveal'
 const stats = [
   { value: '20+', label: 'Anos de Experiência' },
   { value: '500+', label: 'Projetos Entregues' },
-  { value: '100%', label: 'Foco em Qualidade' },
+  { value: '100%', label: 'Foco em Performance' },
 ]
 
 useScrollReveal()
