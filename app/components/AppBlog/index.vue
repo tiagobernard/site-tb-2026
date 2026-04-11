@@ -2,13 +2,13 @@
   <section id="blog" class="py-24" style="background-color: var(--color-surface);">
     <UContainer>
       <!-- Header -->
-      <div class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div v-if="!hideHeader" class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <p class="label-tag mb-3" style="color: var(--color-tertiary);">Conhecimento Compartilhado</p>
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Insights &amp; Tutorials</h2>
         </div>
-        <UButton as="a" href="/blog" variant="ghost" trailing-icon="i-heroicons-chevron-right"
-          class="shrink-0 font-semibold" style="color: var(--color-primary);">View All Articles</UButton>
+        <UButton as="a" href="/posts" variant="ghost" trailing-icon="i-heroicons-chevron-right"
+          class="shrink-0 font-semibold" style="color: var(--color-primary);">Ver todos os Artigos</UButton>
       </div>
 
       <!-- Loading State -->
@@ -41,7 +41,7 @@
             <!-- Meta -->
             <div class="flex items-center gap-2 flex-wrap">
               <template v-if="post.tags">
-                <span v-for="(tag, tagIdx) in post.tags.split(',')" :key="tagIdx"
+                <span v-for="(tag, tagIdx) in post.tags" :key="tagIdx"
                   class="label-tag px-2.5 py-1 rounded-full truncate max-w-[150px]"
                   style="background-color: var(--color-secondary-container); color: var(--color-secondary);">
                   {{ tag.trim() }}
@@ -64,7 +64,7 @@
 
             <span class="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold"
               style="color: var(--color-primary);">
-              Ler artigo
+              Leia mais
               <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
           </div>
@@ -82,21 +82,64 @@ interface BlogPost {
   imagem: string
   titulo: string
   slug: string
-  tags: string
+  tags: string[]
   date: string
   resumo: string
 }
 
-const { data: posts, pending, error } = useAsyncData('latest-blog-posts', async () => {
+const props = defineProps({
+  hideHeader: {
+    type: Boolean,
+    default: false
+  },
+  limit: {
+    type: Number,
+    default: 3
+  }
+})
+
+const { data: posts, pending, error } = useAsyncData('latest-blog-posts-' + props.limit, async () => {
   try {
-    const res = await axios.get<BlogPost[]>('https://tiagobernardes.com.br/api/blog/posts.json')
-    // Retorna apenas os 3 primeiros (últimos) posts
-    return res.data.slice(0, 3)
+    const res = await axios.get<BlogPost[]>('/data/posts.json')
+    // Retorna a quantidade baseada na prop (futura base de paginação)
+    return res.data.slice(0, props.limit)
   } catch (err) {
     console.error('Failed to fetch blog posts:', err)
     throw err
   }
+}, { server: false })
+
+import { watch, nextTick, onMounted, onUnmounted } from 'vue'
+let observer: IntersectionObserver | null = null
+
+const initReveal = () => {
+  const elements = document.querySelectorAll('#blog .reveal:not(.is-visible)')
+  if (!elements.length) return
+
+  if (!observer) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer!.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.12 })
+  }
+
+  elements.forEach((el) => observer!.observe(el))
+}
+
+onMounted(() => {
+  initReveal()
 })
 
-useScrollReveal()
+watch(posts, async () => {
+  await nextTick()
+  initReveal()
+})
+
+onUnmounted(() => {
+  if (observer) observer.disconnect()
+})
 </script>
