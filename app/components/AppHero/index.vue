@@ -22,10 +22,11 @@
           <!-- Headline — asymmetric, editorial weight -->
           <h1 class="reveal display-lg mb-6" style="color: var(--color-on-surface); animation-delay: 0.1s;">
             Sou Tiago<br />
-            <span style="color: var(--color-primary);">Bernardes,</span><br />
-            <p class="text-4xl md:text-5xl font-semibold mt-4" style="color: var(--color-on-surface-variant);">
-              Web Dev at CREAD/IFMG
-            </p>
+            Bernardes,<br />
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(to right, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">GenAI
+              Dev</span> no<br />
+            CREAD/IFMG
           </h1>
 
           <!-- Subtítulo -->
@@ -58,8 +59,26 @@
           </div>
         </div>
       </div>
-      <!-- Quote / Bio Card (right column) -->
-      <div class="hidden lg:flex items-center justify-end flex-1 pl-16">
+      <!-- Right column: Profile Image & Quote / Bio Card -->
+      <div class="hidden lg:flex flex-col items-center justify-center flex-1 pl-16 gap-12">
+        <!-- Profile Image -->
+        <div class="reveal relative group" style="animation-delay: 0.25s;">
+          <!-- Stylistic glow effect -->
+          <div
+            class="absolute inset-0 rounded-full blur-2xl opacity-40 translate-y-2 scale-105 transition-opacity duration-500 group-hover:opacity-60"
+            style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));"
+            aria-hidden="true">
+          </div>
+          <!-- Avatar with gradient border -->
+          <div
+            class="relative w-80 h-80 lg:w-[26rem] lg:h-[26rem] xl:w-[28rem] xl:h-[28rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
+            <img src="/imagens/perfil/tiago-bernardes-genai-developer.png" alt="Tiago Bernardes"
+              class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);" />
+          </div>
+        </div>
+
+        <!-- Quote / Bio Card -->
         <div class="reveal glass-panel rounded-2xl p-8 max-w-md w-full relative" style="animation-delay: 0.35s;">
           <!-- Quote icon badge -->
           <div
