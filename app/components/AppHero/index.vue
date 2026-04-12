@@ -71,7 +71,7 @@
           </div>
           <!-- Avatar with gradient border -->
           <div
-            class="relative w-80 h-80 lg:w-[26rem] lg:h-[26rem] xl:w-[28rem] xl:h-[28rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            class="relative w-80 h-80 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
             <img src="/imagens/perfil/tiago-bernardes-genai-developer.png" alt="Tiago Bernardes"
               class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);" />
@@ -98,7 +98,7 @@
               style="background: linear-gradient(90deg, var(--color-primary), var(--color-primary-container));"
               aria-hidden="true" />
             <p class="label-tag" style="color: var(--color-on-surface-variant);">
-              Belo Horizonte, Brasil
+              Minas Gerais, Brasil
             </p>
           </footer>
         </div>
