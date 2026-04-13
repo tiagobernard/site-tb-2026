@@ -40,6 +40,20 @@
     },
     {
         "id": 1082,
+        "titulo": "Mango Garden",
+        "descricao": "Em parceria com a agência Attri de São Paulo/SP, foi desenvolvido este belo projeto para o empreendimento imobiliário Mango Garden",
+        "imagem": "/imagens/portfolio/portfolio-mango-garden-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://lab82.dev/staging/mango-garden/",
+        "tags": [
+            "wordpress",
+            "site institucional",
+            "empreendimento imobiliário",
+            "Mango Garden",
+            "Attri"
+        ]
+    },
+    {
+        "id": 1080,
         "titulo": "Cea do Brasil",
         "descricao": "Em parceria com a agência digital Pixal de São Bernardo do Campo, desenvolvemos este grande site para a Cea do Brasil, empresa de soluções para o tratamento de água.",
         "imagem": "imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.png",
