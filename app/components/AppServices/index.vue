@@ -57,19 +57,49 @@ interface Service {
 
 const services: Service[] = [
   {
+    title: 'Aplicações de Alta Performance',
+    desc: 'Sistemas web rápidos, escaláveis e sob medida para resolver os desafios mais complexos do seu negócio.',
+    icon: 'i-heroicons-cpu-chip',
+  },
+  {
+    title: 'UI/UX Design',
+    desc: 'Interfaces intuitivas e impactantes que encantam os usuários e elevam o valor da sua marca.',
+    icon: 'i-heroicons-paint-brush',
+  },
+  {
     title: 'Sites Institucionais',
-    desc: 'High-conversion websites tailored for brands and organizations looking for a premium digital presence.',
+    desc: 'Presença digital premium que transmite autoridade e conecta a sua marca com o público ideal.',
     icon: 'i-heroicons-building-office-2',
   },
   {
+    title: 'E-commerce',
+    desc: 'Lojas virtuais robustas e fluidas, otimizadas para maximizar suas vendas e a experiência de compra.',
+    icon: 'i-heroicons-shopping-cart',
+  },
+  {
     title: 'Marketplaces',
-    desc: 'Scalable multi-vendor platforms with complex data management and secure checkout flows.',
-    icon: 'i-heroicons-shopping-bag',
+    desc: 'Plataformas escaláveis para múltiplos vendedores com fluxos seguros e gestão inteligente.',
+    icon: 'i-heroicons-building-storefront',
   },
   {
     title: 'Landing Pages',
-    desc: 'Highly optimized single-page experiences designed to maximize lead generation and ROI.',
+    desc: 'Páginas de altíssima conversão projetadas para atrair leads qualificados e impulsionar o seu ROI.',
     icon: 'i-heroicons-rocket-launch',
+  },
+  {
+    title: 'SEO Google',
+    desc: 'Otimização orgânica avançada para colocar o seu negócio no topo do Google e dominar as pesquisas.',
+    icon: 'i-heroicons-chart-bar',
+  },
+  {
+    title: 'Hospedagem Dedicada',
+    desc: 'Infraestrutura em nuvem segura, veloz e preparada para garantir alta disponibilidade constante.',
+    icon: 'i-heroicons-server-stack',
+  },
+  {
+    title: 'Servidores SMTP',
+    desc: 'Infraestrutura confiável para envios de e-mails transacionais e de marketing com máxima entregabilidade.',
+    icon: 'i-heroicons-envelope-open',
   },
 ]
 
