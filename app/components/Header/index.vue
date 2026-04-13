@@ -60,6 +60,9 @@
 </template>
 
 <script setup lang="ts">
+import { useAppStore } from '~/stores/app'
+import { storeToRefs } from 'pinia'
+
 const navLinks = [
   { label: 'Home', href: '/#home' },
   { label: 'About', href: '/#about' },
@@ -70,7 +73,8 @@ const navLinks = [
 ]
 
 const scrolled = ref(false)
-const mobileOpen = ref(false)
+const appStore = useAppStore()
+const { isMenuOpen: mobileOpen } = storeToRefs(appStore)
 
 onMounted(() => {
   const handler = () => {
