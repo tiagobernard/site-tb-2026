@@ -112,28 +112,28 @@ body {
 }
 
 /* ─── Typography utilities ──────────────────────── */
-.display-lg {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+@utility display-lg {
+  font-size: clamp(2.5rem, 4vw, 5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
-.display-md {
+@utility display-md {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
-.headline-lg {
+@utility headline-lg {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
-.label-tag {
+@utility label-tag {
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.05em;

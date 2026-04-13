@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-10">
     <!-- Background tertiary blob (asymmetric depth layer) -->
     <div aria-hidden="true"
       class="pointer-events-none absolute -top-32 -right-40 w-[600px] h-[600px] rounded-full opacity-10"
@@ -20,7 +20,8 @@
           </div>
 
           <!-- Headline — asymmetric, editorial weight -->
-          <h1 class="reveal display-lg mb-6" style="color: var(--color-on-surface); animation-delay: 0.1s;">
+          <h1 class="reveal display-md min-[1367px]:display-lg mb-6"
+            style="color: var(--color-on-surface); animation-delay: 0.1s;">
             Sou Tiago<br />
             Bernardes,<br />
             <span class="text-transparent bg-clip-text"
@@ -51,7 +52,7 @@
           </div>
 
           <!-- Stats strip -->
-          <div class="reveal mt-16 flex flex-wrap gap-8" style="animation-delay: 0.4s;">
+          <div class="reveal mt-10 flex flex-wrap gap-8" style="animation-delay: 0.4s;">
             <div v-for="stat in stats" :key="stat.label" class="flex flex-col">
               <span class="text-3xl font-bold" style="color: var(--color-primary);">{{ stat.value }}</span>
               <span class="text-sm" style="color: var(--color-on-surface-variant);">{{ stat.label }}</span>
@@ -62,7 +63,7 @@
       <!-- Right column: Profile Image & Quote / Bio Card -->
       <div class="hidden lg:flex flex-col items-center justify-center flex-1 pl-16 gap-12">
         <!-- Profile Image -->
-        <div class="reveal relative group" style="animation-delay: 0.25s;">
+        <div class="reveal relative group max-[1367px]:-mb-30" style="animation-delay: 0.25s;">
           <!-- Stylistic glow effect -->
           <div
             class="absolute inset-0 rounded-full blur-2xl opacity-40 translate-y-2 scale-105 transition-opacity duration-500 group-hover:opacity-60"
