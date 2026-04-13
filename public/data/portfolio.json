@@ -1,5 +1,31 @@
 [
     {
+        "id": 1088,
+        "titulo": "Attri",
+        "descricao": "<p>Landing Page desenvolvida para a agência de desenvolvimento Attri de São Paulo/SP.</p>",
+        "imagem": "/imagens/portfolio/portfolio-attri-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://tiagobernardes.com.br/projetos/attri/",
+        "tags": [
+            "html5",
+            "css3",
+            "figma",
+            "frontend",
+            "landing page"
+        ]
+    },
+    {
+        "id": 1086,
+        "titulo": "Domani Soluções",
+        "descricao": "<p>A Domani Soluções - Contabilidade Especializada, tem uma proposta inovadora para potencializar o crescimento de empresas.</p>",
+        "imagem": "/imagens/portfolio/portfolio-domani-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://domanisolucoes.com.br/",
+        "tags": [
+            "wordpress",
+            "site institucional",
+            "contabilidade"
+        ]
+    },
+    {
         "id": 1084,
         "titulo": "A Quadrilha Djonga",
         "descricao": "<p>Projeto de loja virtual desenvolvido para a produtora musical do cantor Djonga A Quadrilha</p>",
@@ -10,6 +36,17 @@
             "woocommerce",
             "loja virtual",
             "djonga"
+        ]
+    },
+    {
+        "id": 1082,
+        "titulo": "Cea do Brasil",
+        "descricao": "Em parceria com a agência digital Pixal de São Bernardo do Campo, desenvolvemos este grande site para a Cea do Brasil, empresa de soluções para o tratamento de água.",
+        "imagem": "imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://ceadobrasil.com.br/",
+        "tags": [
+            "wordpress",
+            "site institucional"
         ]
     },
     {
