@@ -11,9 +11,9 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Tiago Bernardes – Web Developer & UI Architect',
-  description: 'Software Engineer and UI Architect crafting high-performance digital architectures at CREAD/IFMG. Vue.js, Nuxt, Python, Tailwind CSS.',
-  ogTitle: 'Tiago Bernardes – Web Developer & UI Architect',
-  ogDescription: 'Crafting high-performance digital architectures with a focus on immersive user experiences and modern engineering principles.',
+  title: 'Tiago Bernardes – Especialista em Desenvolvimento Web de Alta Performance & GenAI',
+  description: 'Especialista em Desenvolvimento Web de Alta Performance e Inteligência Artificial. Arquitetura de sistemas escaláveis e soluções de GenAI no CREAD/IFMG.',
+  ogTitle: 'Tiago Bernardes – Especialista em Desenvolvimento Web de Alta Performance & GenAI',
+  ogDescription: 'Desenvolvimento de sistemas escaláveis e arquiteturas digitais de alta performance com foco em GenAI e experiência do usuário.',
 })
 </script>

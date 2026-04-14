@@ -14,27 +14,25 @@
           <!-- Label tag -->
           <div class="reveal glass-panel py-2 px-4 rounded-xl max-w-fit label-tag mb-6"
             style="color: var(--color-primary);">
-            Web
-            Developer ·
-            Especialista
+            Especialista em
+            Desenvolvimento Web
           </div>
 
           <!-- Headline — asymmetric, editorial weight -->
           <h1 class="reveal display-md min-[1367px]:display-lg mb-6"
             style="color: var(--color-on-surface); animation-delay: 0.1s;">
-            Sou Tiago<br />
-            Bernardes,<br />
+            Tiago Bernardes<br />
+            Especialista em<br />
             <span class="text-transparent bg-clip-text"
               style="background-image: linear-gradient(to right, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">GenAI
-              Dev</span> no<br />
-            CREAD/IFMG
+              Web Dev</span> de Alta Performance.
           </h1>
 
           <!-- Subtítulo -->
           <p class="reveal text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
             style="color: var(--color-on-surface-variant); animation-delay: 0.2s;">
-            Crafting high-performance digital architectures with a focus on
-            immersive user experiences and modern engineering principles.
+            Especialista em unir Engenharia de Software e Inteligência Artificial para construir sistemas escaláveis,
+            arquiteturas robustas e experiências digitais de alta performance.
           </p>
 
           <!-- CTAs -->
@@ -42,12 +40,12 @@
             <UButton as="a" href="#portfolio" size="lg"
               class="gradient-primary font-semibold px-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               style="color: var(--color-on-primary); border: none;">
-              Explore Work
+              Ver Projetos
             </UButton>
             <UButton as="a" href="#contact" size="lg" variant="ghost"
               class="font-semibold px-8 border transition-all duration-200 hover:-translate-y-0.5"
               style="color: var(--color-primary); border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);">
-              Get in Touch
+              Fale Comigo
             </UButton>
           </div>
 
@@ -74,7 +72,8 @@
           <div
             class="relative w-80 h-80 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
-            <img src="/imagens/perfil/tiago-bernardes-genai-developer.png" alt="Tiago Bernardes"
+            <img src="/imagens/perfil/tiago-bernardes-genai-developer.png"
+              alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI"
               class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);" />
           </div>
         </div>

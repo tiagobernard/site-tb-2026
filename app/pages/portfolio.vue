@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Portfólio – Tiago Bernardes | Projetos Web Reais',
+  title: 'Portfólio – Especialista em Desenvolvimento Web de Alta Performance',
   description: 'Conheça os projetos desenvolvidos por Tiago Bernardes ao longo de mais de 10 anos: e-commerces, sites institucionais, lojas virtuais e sistemas web com WordPress, Vue.js e muito mais.',
   ogTitle: 'Portfólio Completo – Tiago Bernardes',
   ogDescription: 'Mais de 40 projetos entregues. Do e-commerce ao sistema web sob medida — veja o histórico real de entregas em WordPress, WooCommerce, Vue.js e outras tecnologias.',

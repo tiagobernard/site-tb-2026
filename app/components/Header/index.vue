@@ -25,7 +25,7 @@
           <UButton as="a" href="/#contact" size="sm"
             class="gradient-primary font-semibold transition-transform duration-200 hover:-translate-y-0.5"
             style="color: var(--color-on-primary); border: none;">
-            Get in Touch
+            Fale Comigo
           </UButton>
         </div>
 
@@ -49,7 +49,7 @@
             <li class="pt-2">
               <UButton as="a" href="/#contact" size="sm" block class="gradient-primary font-semibold"
                 style="color: var(--color-on-primary); border: none;" @click="mobileOpen = false">
-                Get in Touch
+                Fale Comigo
               </UButton>
             </li>
           </ul>
@@ -64,12 +64,12 @@ import { useAppStore } from '~/stores/app'
 import { storeToRefs } from 'pinia'
 
 const navLinks = [
-  { label: 'Home', href: '/#home' },
-  { label: 'About', href: '/#about' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Início', href: '/#home' },
+  { label: 'Habilidades', href: '/#habilidades' },
+  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Portfólio', href: '/#portfolio' },
   { label: 'Blog', href: '/#blog' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Contato', href: '/#contato' },
 ]
 
 const scrolled = ref(false)

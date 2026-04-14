@@ -5,7 +5,7 @@
       <div v-if="!hideHeader" class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <p class="label-tag mb-3" style="color: var(--color-tertiary);">Conhecimento Compartilhado</p>
-          <h2 class="headline-lg" style="color: var(--color-on-surface);">Insights &amp; Tutorials</h2>
+          <h2 class="headline-lg" style="color: var(--color-on-surface);">Artigos & Tecnologia</h2>
         </div>
         <UButton as="a" href="/posts" variant="ghost" trailing-icon="i-heroicons-chevron-right"
           class="shrink-0 font-semibold" style="color: var(--color-primary);">Ver todos os Artigos</UButton>

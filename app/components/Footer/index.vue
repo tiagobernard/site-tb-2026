@@ -10,7 +10,8 @@
             <span class="font-semibold text-sm" style="color: var(--color-on-surface);">Tiago Bernardes</span>
           </div>
           <p class="text-sm leading-relaxed max-w-xs" style="color: var(--color-on-surface-variant);">
-            Software Engineer &amp; UI Architect. Crafting digital experiences with precision and purpose.
+            Especialista em Desenvolvimento Web & GenAI. Arquitetando sistemas escaláveis e experiências digitais de
+            alta performance.
           </p>
         </div>
 
@@ -36,9 +37,9 @@
           </div>
           <div class="flex gap-4">
             <a href="/privacy" class="label-tag opacity-50 hover:opacity-100 transition-opacity"
-              style="color: var(--color-on-surface-variant);">Privacy Policy</a>
+              style="color: var(--color-on-surface-variant);">Política de Privacidade</a>
             <a href="/terms" class="label-tag opacity-50 hover:opacity-100 transition-opacity"
-              style="color: var(--color-on-surface-variant);">Terms of Service</a>
+              style="color: var(--color-on-surface-variant);">Termos de Uso</a>
           </div>
         </div>
       </div>
@@ -47,10 +48,10 @@
       <div class="py-5 border-t flex flex-col sm:flex-row items-center justify-between gap-3"
         style="border-color: var(--color-outline-variant);">
         <p class="label-tag opacity-40" style="color: var(--color-on-surface);">
-          © 2026 Tiago Bernardes. All rights reserved.
+          © 2026 Tiago Bernardes. Todos os direitos reservados.
         </p>
         <p class="label-tag opacity-40" style="color: var(--color-on-surface);">
-          Built with Nuxt 4 + Nuxt UI
+          Desenvolvido com Nuxt 4 + Nuxt UI
         </p>
         <img alt="GitHub last commit"
           src="https://img.shields.io/github/last-commit/tiagobernard/site-tb-2026?label=%C3%BAltima%20atualiza%C3%A7%C3%A3o&logo=git">
@@ -61,11 +62,12 @@
 
 <script setup lang="ts">
 const footerLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Início', href: '#home' },
+  { label: 'Habilidades', href: '#habilidades' },
+  { label: 'Serviços', href: '#servicos' },
+  { label: 'Portfólio', href: '#portfolio' },
   { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contato', href: '#contato' },
 ]
 
 const socials = [

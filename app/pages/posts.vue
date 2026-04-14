@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Blog – Tiago Bernardes | Artigos de Front-end',
+  title: 'Blog – Especialista em Front-end, IA & Performance',
   description: 'Leia artigos completos sobre Vue.js, React, CSS, performance web, e design UI/UX da perspectiva de um programador front-end especialista.',
   ogTitle: 'Blog de Tiago Bernardes – Insights & Tutoriais',
   ogDescription: 'Descubra tutoriais avançados, dicas e análises sobre desenvolvimento web moderno.',

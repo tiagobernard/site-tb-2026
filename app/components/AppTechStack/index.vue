@@ -1,12 +1,13 @@
 <template>
-  <section id="about" class="py-24" style="background-color: var(--color-surface-low);">
+  <section id="habilidades" class="py-24" style="background-color: var(--color-surface-low);">
     <UContainer>
       <!-- Section header -->
       <div class="reveal mb-14">
         <p class="label-tag mb-3" style="color: var(--color-tertiary);">Stack Tecnológico</p>
-        <h2 class="headline-lg" style="color: var(--color-on-surface);">Tech Stack</h2>
+        <h2 class="headline-lg" style="color: var(--color-on-surface);">Tecnologias & Arquitetura</h2>
         <p class="mt-3 max-w-xl text-base leading-relaxed" style="color: var(--color-on-surface-variant);">
-          A curated selection of technologies I use to build scalable, resilient web applications.
+          Uma seleção criteriosa de tecnologias que utilizo para construir aplicações web escaláveis, resilientes e de
+          alta performance.
         </p>
       </div>
 

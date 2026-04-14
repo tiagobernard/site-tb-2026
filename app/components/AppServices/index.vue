@@ -1,10 +1,10 @@
 <template>
-  <section id="services" class="py-24" style="background-color: var(--color-surface);">
+  <section id="servicos" class="py-24" style="background-color: var(--color-surface);">
     <UContainer>
       <!-- Section header -->
       <div class="reveal mb-14">
         <p class="label-tag mb-3" style="color: var(--color-tertiary);">O que eu faço</p>
-        <h2 class="headline-lg" style="color: var(--color-on-surface);">Professional Services</h2>
+        <h2 class="headline-lg" style="color: var(--on-surface);">Especialista em Desenvolvimento Web & GenAI</h2>
       </div>
 
       <!-- Services grid — 3 glass cards, no dividers -->
@@ -49,17 +49,17 @@ interface Service {
 const services: Service[] = [
   {
     title: 'Soluções GenAI',
-    desc: 'Sistemas inteligentes que utilizam o poder da IA Generativa para automatizar processos e inovar produtos.',
+    desc: 'Desenvolvimento de sistemas inteligentes baseados em LLM e IA Generativa para automação de processos de alto impacto.',
     icon: 'i-heroicons-beaker'
   },
   {
     title: 'Agentes Inteligentes',
-    desc: 'Arquiteturas cognitivas e automações complexas que elevam a eficiência e a inteligência do seu software.',
+    desc: 'Arquiteturas cognitivas e agentes autônomos que elevam a eficiência operacional e a inteligência do seu ecossistema digital.',
     icon: 'i-heroicons-user-group'
   },
   {
     title: 'Aplicações de Alta Performance',
-    desc: 'Sistemas web rápidos, escaláveis e sob medida para resolver os desafios mais complexos do seu negócio.',
+    desc: 'Sistemas robustos e escaláveis desenvolvidos com tecnologias de ponta para garantir máxima velocidade e estabilidade.',
     icon: 'i-heroicons-cpu-chip',
   },
   {
@@ -84,7 +84,7 @@ const services: Service[] = [
   },
   {
     title: 'SEO Google',
-    desc: 'Otimização orgânica avançada para colocar o seu negócio no topo do Google e dominar as pesquisas.',
+    desc: 'Otimização técnica avançada e SEO para dominar os mecanismos de busca e garantir visibilidade orgânica de autoridade.',
     icon: 'i-heroicons-chart-bar',
   },
   {

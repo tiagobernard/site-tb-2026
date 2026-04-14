@@ -5,8 +5,8 @@
       <!-- Section header — home page only -->
       <div v-if="preview" class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p class="label-tag mb-3" style="color: var(--color-tertiary);">Trabalhos Selecionados</p>
-          <h2 class="headline-lg" style="color: var(--color-on-surface);">Selected Portfolio</h2>
+          <p class="label-tag mb-3" style="color: var(--color-tertiary);">Trabalhos em Destaque</p>
+          <h2 class="headline-lg" style="color: var(--color-on-surface);">Portfólio Selecionado</h2>
         </div>
         <UButton as="a" href="/portfolio" variant="ghost" trailing-icon="i-heroicons-arrow-right"
           class="shrink-0 font-semibold" style="color: var(--color-primary);">Ver todos os projetos</UButton>
@@ -28,8 +28,7 @@
                  grid grid-cols-1 md:grid-cols-[280px_1fr] items-stretch
                  transition-all duration-300 hover:-translate-y-0.5" :style="{ animationDelay: `${i * 0.08}s` }">
           <!-- Project image tracking div height -->
-          <div class="relative h-56 md:h-full w-full overflow-hidden"
-            style="background-color: var(--color-surface);">
+          <div class="relative h-56 md:h-full w-full overflow-hidden" style="background-color: var(--color-surface);">
             <img :src="project.imagem" :alt="project.titulo"
               class="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
               loading="lazy" />
