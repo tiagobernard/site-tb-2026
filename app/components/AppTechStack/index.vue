@@ -16,11 +16,11 @@
                  transition-all duration-300 hover:-translate-y-1"
           style="background-color: var(--color-surface-high); animation-delay: calc(0.05s * var(--i));"
           :style="{ '--i': i }">
-          <!-- Icon (SVG placeholder ring tinted primary) -->
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-xs font-bold transition-all duration-300
+          <!-- Icon -->
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300
                    group-hover:shadow-[0_0_16px_-2px_var(--color-primary)]"
             style="background-color: var(--color-surface-highest); color: var(--color-primary);">
-            {{ tech.abbr }}
+            <UIcon :name="tech.icon" class="w-6 h-6" />
           </div>
           <p class="text-xs font-semibold text-center" style="color: var(--color-on-surface);">{{ tech.name }}</p>
           <p class="label-tag text-center leading-tight" style="color: var(--color-on-surface-variant);">{{ tech.desc }}
@@ -36,35 +36,35 @@ import { useScrollReveal } from '~/composables/useScrollReveal'
 
 interface Tech {
   name: string
-  abbr: string
+  icon: string
   desc: string
 }
 
 const techs: Tech[] = [
-  { name: 'GenAI', abbr: 'AI', desc: 'Generative Models' },
-  { name: 'LLM', abbr: 'LM', desc: 'Language Models' },
-  { name: 'HTML5', abbr: 'H5', desc: 'Semantic Markup' },
-  { name: 'CSS3', abbr: 'C3', desc: 'Modern Styling' },
-  { name: 'Sass', abbr: 'SS', desc: 'CSS Preprocessor' },
-  { name: 'JavaScript', abbr: 'JS', desc: 'ES6+ Features' },
-  { name: 'TypeScript', abbr: 'TS', desc: 'Static Typing' },
-  { name: 'Vue.js', abbr: 'VU', desc: 'Progressive Framework' },
-  { name: 'Nuxt.js', abbr: 'NX', desc: 'Vue Framework' },
-  { name: 'Pinia', abbr: 'PN', desc: 'State Management' },
-  { name: 'Nuxt UI', abbr: 'UI', desc: 'Component Library' },
-  { name: 'Tailwind', abbr: 'TW', desc: 'Utility-first CSS' },
-  { name: 'Cypress', abbr: 'CY', desc: 'E2E Testing' },
-  { name: 'Storybook', abbr: 'SB', desc: 'UI Components' },
-  { name: 'n8n', abbr: 'N8', desc: 'Workflow Automation' },
-  { name: 'Python', abbr: 'PY', desc: 'Backend & Data' },
-  { name: 'Node.js', abbr: 'ND', desc: 'JS Runtime' },
-  { name: 'Docker', abbr: 'DK', desc: 'Containerization' },
-  { name: 'Git', abbr: 'GT', desc: 'Version Control' },
-  { name: 'Figma', abbr: 'FG', desc: 'UI/UX Design' },
-  { name: 'WordPress', abbr: 'WP', desc: 'CMS Solutions' },
-  { name: 'Moodle', abbr: 'MD', desc: 'LMS Platform' },
-  { name: 'macOS', abbr: 'MC', desc: 'Operating System' },
-  { name: 'cPanel', abbr: 'CP', desc: 'Web Hosting Control' },
+  { name: 'GenAI', icon: 'i-simple-icons-openai', desc: 'Generative Models' },
+  { name: 'LLM', icon: 'i-simple-icons-anthropic', desc: 'Language Models' },
+  { name: 'HTML5', icon: 'i-simple-icons-html5', desc: 'Semantic Markup' },
+  { name: 'CSS3', icon: 'i-simple-icons-css3', desc: 'Modern Styling' },
+  { name: 'Sass', icon: 'i-simple-icons-sass', desc: 'CSS Preprocessor' },
+  { name: 'JavaScript', icon: 'i-simple-icons-javascript', desc: 'ES6+ Features' },
+  { name: 'TypeScript', icon: 'i-simple-icons-typescript', desc: 'Static Typing' },
+  { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs', desc: 'Progressive Framework' },
+  { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs', desc: 'Vue Framework' },
+  { name: 'Pinia', icon: 'i-simple-icons-pinia', desc: 'State Management' },
+  { name: 'Nuxt UI', icon: 'i-simple-icons-heroui', desc: 'Component Library' },
+  { name: 'Tailwind', icon: 'i-simple-icons-tailwindcss', desc: 'Utility-first CSS' },
+  { name: 'Cypress', icon: 'i-simple-icons-cypress', desc: 'E2E Testing' },
+  { name: 'Storybook', icon: 'i-simple-icons-storybook', desc: 'UI Components' },
+  { name: 'n8n', icon: 'i-simple-icons-n8n', desc: 'Workflow Automation' },
+  { name: 'Python', icon: 'i-simple-icons-python', desc: 'Backend & Data' },
+  { name: 'Node.js', icon: 'i-simple-icons-nodedotjs', desc: 'JS Runtime' },
+  { name: 'Docker', icon: 'i-simple-icons-docker', desc: 'Containerization' },
+  { name: 'Git', icon: 'i-simple-icons-git', desc: 'Version Control' },
+  { name: 'Figma', icon: 'i-simple-icons-figma', desc: 'UI/UX Design' },
+  { name: 'WordPress', icon: 'i-simple-icons-wordpress', desc: 'CMS Solutions' },
+  { name: 'Moodle', icon: 'i-simple-icons-moodle', desc: 'LMS Platform' },
+  { name: 'macOS', icon: 'i-simple-icons-apple', desc: 'Operating System' },
+  { name: 'cPanel', icon: 'i-simple-icons-cpanel', desc: 'Web Hosting Control' },
 ]
 
 useScrollReveal()
