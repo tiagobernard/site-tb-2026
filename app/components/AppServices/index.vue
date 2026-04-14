@@ -9,19 +9,12 @@
 
       <!-- Services grid — 3 glass cards, no dividers -->
       <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <li
-          v-for="(service, i) in services"
-          :key="service.title"
-          class="reveal glass-panel rounded-2xl p-8 flex flex-col gap-6
+        <li v-for="(service, i) in services" :key="service.title" class="reveal glass-panel rounded-2xl p-8 flex flex-col gap-6
                  transition-all duration-300 hover:-translate-y-1
-                 hover:border-opacity-20"
-          :style="{ animationDelay: `${i * 0.1}s` }"
-        >
+                 hover:border-opacity-20" :style="{ animationDelay: `${i * 0.1}s` }">
           <!-- Icon ring -->
-          <div
-            class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-            style="background: linear-gradient(135deg, var(--color-primary-container), color-mix(in srgb, var(--color-primary-container) 60%, transparent));"
-          >
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+            style="background: linear-gradient(135deg, var(--color-primary-container), color-mix(in srgb, var(--color-primary-container) 60%, transparent));">
             <UIcon :name="service.icon" class="w-6 h-6" style="color: var(--color-primary);" />
           </div>
 
@@ -32,11 +25,9 @@
           </div>
 
           <!-- Subtle CTA -->
-          <a
-            href="#contact"
+          <a href="#contact"
             class="mt-auto flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 hover:gap-2.5"
-            style="color: var(--color-primary);"
-          >
+            style="color: var(--color-primary);">
             Saiba mais
             <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
           </a>
@@ -57,14 +48,19 @@ interface Service {
 
 const services: Service[] = [
   {
+    title: 'Soluções GenAI',
+    desc: 'Sistemas inteligentes que utilizam o poder da IA Generativa para automatizar processos e inovar produtos.',
+    icon: 'i-heroicons-beaker'
+  },
+  {
+    title: 'Agentes Inteligentes',
+    desc: 'Arquiteturas cognitivas e automações complexas que elevam a eficiência e a inteligência do seu software.',
+    icon: 'i-heroicons-user-group'
+  },
+  {
     title: 'Aplicações de Alta Performance',
     desc: 'Sistemas web rápidos, escaláveis e sob medida para resolver os desafios mais complexos do seu negócio.',
     icon: 'i-heroicons-cpu-chip',
-  },
-  {
-    title: 'UI/UX Design',
-    desc: 'Interfaces intuitivas e impactantes que encantam os usuários e elevam o valor da sua marca.',
-    icon: 'i-heroicons-paint-brush',
   },
   {
     title: 'Sites Institucionais',
@@ -95,12 +91,7 @@ const services: Service[] = [
     title: 'Hospedagem Dedicada',
     desc: 'Infraestrutura em nuvem segura, veloz e preparada para garantir alta disponibilidade constante.',
     icon: 'i-heroicons-server-stack',
-  },
-  {
-    title: 'Servidores SMTP',
-    desc: 'Infraestrutura confiável para envios de e-mails transacionais e de marketing com máxima entregabilidade.',
-    icon: 'i-heroicons-envelope-open',
-  },
+  }
 ]
 
 useScrollReveal()
