@@ -3,7 +3,7 @@
     <UContainer>
 
       <!-- Section header — home page only -->
-      <div v-if="preview" class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div v-if="preview" class="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in">
         <div>
           <p class="label-tag mb-3" style="color: var(--color-tertiary);">Trabalhos em Destaque</p>
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Portfólio Selecionado</h2>
@@ -23,40 +23,74 @@
       </div>
 
       <!-- Project list -->
-      <ul v-else class="flex flex-col gap-6">
-        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="fade-in group glass-panel rounded-2xl overflow-hidden
-                 grid grid-cols-1 md:grid-cols-[280px_1fr] items-stretch
-                 transition-all duration-300 hover:-translate-y-0.5" :style="{ animationDelay: `${i * 0.08}s` }">
-          <!-- Project image tracking div height -->
-          <div class="relative h-56 md:h-full w-full overflow-hidden" style="background-color: var(--color-surface);">
+      <ul v-else class="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[240px]">
+        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="fade-in group relative glass-panel-subtle rounded-3xl overflow-hidden
+                 transition-all duration-500 hover:-translate-y-1 hover-glow border border-transparent
+                 flex flex-col md:block" :class="getBentoClasses(i)" :style="{ animationDelay: `${i * 0.08}s` }">
+
+          <!-- Desktop CTA Icon (aparece no hover superior direito) -->
+          <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
+            :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="ghost"
+            icon="i-heroicons-arrow-top-right-on-square"
+            class="hidden md:flex absolute top-6 right-6 z-20 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
+            aria-label="Acessar" />
+
+          <!-- Imagem: Topo no Mobile, Fundo absoluto no Desktop -->
+          <div class="relative w-full h-56 md:absolute md:inset-0 md:h-full z-0 overflow-hidden shrink-0">
             <img :src="project.imagem" :alt="project.titulo"
-              class="w-full h-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+              class="w-full h-full object-cover object-left-top transition-transform duration-700 md:group-hover:scale-110"
               loading="lazy" />
+            <!-- Gradient Overlay (Apenas Desktop para leitura do texto) -->
+            <div
+              class="hidden md:block absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/40 to-transparent z-0">
+            </div>
+            <!-- Overlay Escuro Adicional no Hover (Usando a cor de superfície do projeto) -->
+            <div
+              class="hidden md:block absolute inset-0 bg-[color:var(--color-surface)]/0 group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none group-hover:backdrop-blur-[3px] transition-all duration-500 z-0">
+            </div>
           </div>
 
           <!-- Project content -->
-          <div class="flex flex-col flex-1 gap-4 p-6 md:p-8 h-full">
+          <div class="relative z-10 flex flex-col flex-1 p-5 md:p-6 md:h-full md:justify-end">
+            <div class="flex flex-col gap-3">
+              <!-- Title -->
+              <h3
+                class="text-2xl md:text-3xl font-bold capitalize text-[color:var(--color-on-surface)] md:text-white drop-shadow-sm transition-transform duration-500 md:group-hover:-translate-y-1">
+                {{ project.titulo }}
+              </h3>
 
-            <h3 class="text-xl font-bold capitalize" style="color: var(--color-on-surface);">{{ project.titulo }}</h3>
+              <!-- Hover Reveal Block (Fade in + Slide up grid trick on Desktop) -->
+              <div
+                class="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                <div class="overflow-hidden">
+                  <!-- Inner wrapper for fade-in -->
+                  <div
+                    class="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-3 md:pb-2">
+                    <div
+                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:text-gray-200 line-clamp-2"
+                      v-html="project.descricao" />
 
-            <div class="text-sm leading-relaxed" style="color: var(--color-on-surface-variant);"
-              v-html="project.descricao" />
+                    <!-- Tech chips & Mobile CTA -->
+                    <div
+                      class="pt-2 md:pt-3 mt-1 flex flex-wrap items-center justify-between gap-4 md:border-t md:border-white/20">
+                      <!-- Badges Minimalistas -->
+                      <ul class="flex flex-wrap gap-2">
+                        <li v-for="tag in project.tags" :key="tag"
+                          class="px-2.5 py-0.5 text-[11px] font-medium rounded-md uppercase tracking-wider md:bg-transparent md:text-white md:border md:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
+                          {{ tag }}
+                        </li>
+                      </ul>
 
-            <!-- Bottom area: Tech chips & CTA -->
-            <div class="mt-auto pt-4 flex flex-wrap items-center justify-between gap-4">
-              <!-- Tech chips -->
-              <ul class="flex flex-wrap gap-2">
-                <li v-for="tag in project.tags" :key="tag" class="label-tag px-3 py-1 rounded-full"
-                  style="background-color: var(--color-secondary-container); color: var(--color-secondary);">{{ tag }}
-                </li>
-              </ul>
-
-              <!-- CTA — only when url_externa exists -->
-              <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
-                :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
-                trailing-icon="i-heroicons-arrow-top-right-on-square"
-                class="shrink-0 font-medium rounded-full px-4 transition-transform hover:-translate-y-0.5"
-                style="color: var(--color-primary);">Acessar</UButton>
+                      <!-- Mobile CTA (escondido no desktop já que usa ícone superior) -->
+                      <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
+                        :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
+                        trailing-icon="i-heroicons-arrow-top-right-on-square"
+                        class="md:hidden shrink-0 font-medium rounded-full px-4" style="color: var(--color-primary);">
+                        Acessar</UButton>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </li>
@@ -118,7 +152,7 @@ onMounted(async () => {
 const allItems = computed(() => data.value ?? [])
 
 const displayedItems = computed(() =>
-  props.preview ? allItems.value.slice(0, 4) : allItems.value
+  props.preview ? allItems.value.slice(0, 6) : allItems.value
 )
 
 const totalPages = computed(() =>
@@ -130,6 +164,23 @@ const paginatedItems = computed(() => {
   const start = (currentPage.value - 1) * pageSize
   return displayedItems.value.slice(start, start + pageSize)
 })
+
+const bentoClasses = [
+  'md:col-span-8 md:row-span-2', // i=0: Destaque
+  'md:col-span-4 md:row-span-1', // i=1: Secundário
+  'md:col-span-4 md:row-span-1', // i=2: Secundário
+  'md:col-span-4 md:row-span-1', // i=3
+  'md:col-span-4 md:row-span-1', // i=4
+  'md:col-span-4 md:row-span-1', // i=5
+  'md:col-span-6 md:row-span-1', // i=6
+  'md:col-span-6 md:row-span-1', // i=7
+  'md:col-span-6 md:row-span-1', // i=8
+  'md:col-span-6 md:row-span-1', // i=9
+]
+
+function getBentoClasses(i: number) {
+  return bentoClasses[i % bentoClasses.length]
+}
 
 function goToPage(page: number) {
   if (page < 1 || page > totalPages.value) return
@@ -157,5 +208,10 @@ function goToPage(page: number) {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 </style>
