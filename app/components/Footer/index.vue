@@ -4,11 +4,9 @@
       <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         <!-- Brand -->
         <div class="flex flex-col gap-3">
-          <div class="flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold gradient-primary"
-              style="color: var(--color-on-primary);">TB</span>
-            <span class="font-semibold text-sm" style="color: var(--color-on-surface);">Tiago Bernardes</span>
-          </div>
+          <NuxtLink to="/" class="inline-flex items-center outline-none focus-visible:ring-2 focus-visible:ring-primary rounded" aria-label="Tiago Bernardes – Início">
+            <AppLogo size="sm" />
+          </NuxtLink>
           <p class="text-sm leading-relaxed max-w-xs" style="color: var(--color-on-surface-variant);">
             Especialista em Desenvolvimento Web & GenAI. Arquitetando sistemas escaláveis e experiências digitais de
             alta performance.

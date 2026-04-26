@@ -4,12 +4,8 @@
     <UContainer>
       <nav class="flex items-center justify-between h-16 md:h-18">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center gap-2 group" aria-label="Tiago Bernardes – Início">
-          <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold gradient-primary"
-            style="color: var(--color-on-primary);">TB</span>
-          <span class="hidden sm:block font-semibold text-sm" style="color: var(--color-on-surface);">
-            Tiago Bernardes
-          </span>
+        <NuxtLink to="/" class="group rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-label="Tiago Bernardes – Início">
+          <AppLogo size="lg" />
         </NuxtLink>
 
         <!-- Desktop Nav -->
