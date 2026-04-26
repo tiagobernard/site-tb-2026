@@ -25,7 +25,7 @@
           </div>
 
           <!-- Subtle CTA -->
-          <a href="#contact"
+          <a href="#contato"
             class="mt-auto flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 hover:gap-2.5"
             style="color: var(--color-primary);">
             Saiba mais
