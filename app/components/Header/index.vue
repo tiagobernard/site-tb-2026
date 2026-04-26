@@ -4,9 +4,7 @@
     <UContainer>
       <nav class="flex items-center justify-between h-16 md:h-18">
         <!-- Logo -->
-        <NuxtLink to="/" class="group rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-label="Tiago Bernardes – Início">
-          <AppLogo size="lg" />
-        </NuxtLink>
+        <AppLogo size="lg" class="group" />
 
         <!-- Desktop Nav -->
         <div class="hidden md:block">

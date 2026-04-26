@@ -1,9 +1,9 @@
 <template>
-  <span :class="['logo-wrapper inline-flex items-center font-bold tracking-tight', sizeClasses[size]]">
+  <NuxtLink to="/" :class="['logo-wrapper inline-flex items-center font-bold tracking-tight outline-none focus-visible:ring-2 focus-visible:ring-primary rounded', sizeClasses[size]]" aria-label="Tiago Bernardes – Início">
     <span class="bracket font-mono opacity-80 text-[var(--color-primary)]">&lt;</span>
     <span class="gradient-text font-mono">tb</span>
     <span class="bracket font-mono opacity-80 text-[var(--color-primary)]">/&gt;</span>
-  </span>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

@@ -4,9 +4,9 @@
       <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         <!-- Brand -->
         <div class="flex flex-col gap-3">
-          <NuxtLink to="/" class="inline-flex items-center outline-none focus-visible:ring-2 focus-visible:ring-primary rounded" aria-label="Tiago Bernardes – Início">
+          <div>
             <AppLogo size="sm" />
-          </NuxtLink>
+          </div>
           <p class="text-sm leading-relaxed max-w-xs" style="color: var(--color-on-surface-variant);">
             Especialista em Desenvolvimento Web & GenAI. Arquitetando sistemas escaláveis e experiências digitais de
             alta performance.
