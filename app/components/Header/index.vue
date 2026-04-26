@@ -21,7 +21,7 @@
         </div>
 
         <!-- Mobile Hamburger -->
-        <UButton id="mobile-menu-btn" variant="ghost" size="sm" class="md:hidden"
+        <UButton id="mobile-menu-btn" variant="ghost" size="xl" class="md:hidden"
           :icon="mobileOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'"
           :aria-label="mobileOpen ? 'Fechar menu' : 'Abrir menu'" @click="mobileOpen = !mobileOpen" />
       </nav>
@@ -34,7 +34,7 @@
           <div class="py-4 flex flex-col gap-1">
             <AppMainMenu direction="vertical" mobile @link-click="mobileOpen = false" />
             <div class="pt-2">
-              <UButton as="a" href="/#contact" size="sm" block class="gradient-primary font-semibold"
+              <UButton as="a" href="/#contato" size="sm" block class="gradient-primary font-semibold"
                 style="color: var(--color-on-primary); border: none;" @click="mobileOpen = false">
                 Fale Comigo
               </UButton>
