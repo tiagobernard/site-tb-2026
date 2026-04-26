@@ -27,14 +27,7 @@
 
         <!-- Social + legal links -->
         <div class="flex flex-col gap-4 md:items-end">
-          <div class="flex gap-3">
-            <a v-for="social in socials" :key="social.label" :href="social.href" :aria-label="social.label"
-              target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200
-                     hover:opacity-100 opacity-50 hover:-translate-y-0.5"
-              style="background-color: var(--color-surface-high); color: var(--color-primary);">
-              <UIcon :name="social.icon" class="w-4 h-4" />
-            </a>
-          </div>
+          <AppSocialLinks size="sm" />
           <div class="flex gap-4">
             <a href="/documents/curriculo-Tiago-Bernardes-Especialista-GenAI-Web.pdf" target="_blank" download class="label-tag opacity-50 hover:opacity-100 transition-opacity"
               style="color: var(--color-on-surface-variant);">Baixar Currículo (PDF)</a>
@@ -68,9 +61,5 @@ const footerLinks = [
   { label: 'Contato', href: '#contato' },
 ]
 
-const socials = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/tiagobernardess', icon: 'i-simple-icons-linkedin' },
-  { label: 'GitHub', href: 'https://github.com/tiagobernardess', icon: 'i-simple-icons-github' },
-  { label: 'Email', href: 'mailto:tiago@example.com', icon: 'i-heroicons-envelope' },
-]
+
 </script>

@@ -20,26 +20,12 @@
         <p class="reveal text-lg leading-relaxed mb-10 max-w-xl mx-auto"
           style="color: var(--color-on-surface-variant); animation-delay: 0.2s;">
           Estou disponível para novas oportunidades e colaborações estratégicas.
-          Envie uma mensagem e vamos transformar sua ideia em uma arquitetura digital de alta performance.
+          Entre em contato através dos canais abaixo e vamos transformar sua ideia em uma arquitetura digital de alta performance.
         </p>
 
-        <!-- CTA Primary -->
-        <div class="reveal mb-14" style="animation-delay: 0.3s;">
-          <UButton as="a" href="mailto:tiago@example.com" size="xl"
-            class="gradient-primary font-semibold px-12 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-            style="color: var(--color-on-primary); border: none;">
-            Enviar Mensagem
-          </UButton>
-        </div>
-
         <!-- Social links -->
-        <div class="reveal flex items-center justify-center gap-4" style="animation-delay: 0.4s;">
-          <a v-for="social in socials" :key="social.label" :href="social.href" :aria-label="social.label"
-            target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200
-                   hover:-translate-y-0.5 hover:opacity-100 opacity-60"
-            style="background-color: var(--color-surface-high); color: var(--color-primary);">
-            <UIcon :name="social.icon" class="w-5 h-5" />
-          </a>
+        <div class="reveal flex justify-center mt-8 mb-4" style="animation-delay: 0.3s;">
+          <AppSocialLinks size="lg" />
         </div>
       </div>
     </UContainer>
@@ -48,12 +34,6 @@
 
 <script setup lang="ts">
 import { useScrollReveal } from '~/composables/useScrollReveal'
-
-const socials = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/tiagobernardess', icon: 'i-simple-icons-linkedin' },
-  { label: 'GitHub', href: 'https://github.com/tiagobernardss', icon: 'i-simple-icons-github' },
-  { label: 'Email', href: 'mailto:tiago@example.com', icon: 'i-heroicons-envelope' },
-]
 
 useScrollReveal()
 </script>
