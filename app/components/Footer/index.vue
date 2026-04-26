@@ -17,12 +17,7 @@
 
         <!-- Navigation links -->
         <nav aria-label="Footer navigation">
-          <ul class="flex flex-col gap-2">
-            <li v-for="link in footerLinks" :key="link.label">
-              <a :href="link.href" class="text-sm transition-opacity duration-200 hover:opacity-100 opacity-60"
-                style="color: var(--color-on-surface);">{{ link.label }}</a>
-            </li>
-          </ul>
+          <AppMainMenu direction="vertical" />
         </nav>
 
         <!-- Social + legal links -->
@@ -52,14 +47,7 @@
 </template>
 
 <script setup lang="ts">
-const footerLinks = [
-  { label: 'Início', href: '#home' },
-  { label: 'Habilidades', href: '#habilidades' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Portfólio', href: '#portfolio' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contato', href: '#contato' },
-]
+
 
 
 </script>

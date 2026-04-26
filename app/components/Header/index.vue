@@ -13,16 +13,13 @@
         </NuxtLink>
 
         <!-- Desktop Nav -->
-        <ul class="hidden md:flex items-center gap-6">
-          <li v-for="link in navLinks" :key="link.href">
-            <a :href="link.href" class="text-sm font-medium transition-colors duration-200 hover:opacity-100 opacity-70"
-              style="color: var(--color-on-surface);">{{ link.label }}</a>
-          </li>
-        </ul>
+        <div class="hidden md:block">
+          <AppMainMenu direction="horizontal" />
+        </div>
 
         <!-- CTA Desktop -->
         <div class="hidden md:flex items-center gap-3">
-          <UButton as="a" href="/#contact" size="sm"
+          <UButton as="a" href="/#contato" size="sm"
             class="gradient-primary font-semibold transition-transform duration-200 hover:-translate-y-0.5"
             style="color: var(--color-on-primary); border: none;">
             Fale Comigo
@@ -40,19 +37,15 @@
     <Transition name="slide-down">
       <div v-if="mobileOpen" class="md:hidden glass-panel border-t" style="border-color: var(--color-outline-variant);">
         <UContainer>
-          <ul class="py-4 flex flex-col gap-1">
-            <li v-for="link in navLinks" :key="link.href">
-              <a :href="link.href"
-                class="block px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 hover:opacity-100 opacity-70"
-                style="color: var(--color-on-surface);" @click="mobileOpen = false">{{ link.label }}</a>
-            </li>
-            <li class="pt-2">
+          <div class="py-4 flex flex-col gap-1">
+            <AppMainMenu direction="vertical" mobile @link-click="mobileOpen = false" />
+            <div class="pt-2">
               <UButton as="a" href="/#contact" size="sm" block class="gradient-primary font-semibold"
                 style="color: var(--color-on-primary); border: none;" @click="mobileOpen = false">
                 Fale Comigo
               </UButton>
-            </li>
-          </ul>
+            </div>
+          </div>
         </UContainer>
       </div>
     </Transition>
@@ -63,14 +56,6 @@
 import { useAppStore } from '~/stores/app'
 import { storeToRefs } from 'pinia'
 
-const navLinks = [
-  { label: 'Início', href: '/#home' },
-  { label: 'Habilidades', href: '/#habilidades' },
-  { label: 'Serviços', href: '/#servicos' },
-  { label: 'Portfólio', href: '/#portfolio' },
-  { label: 'Blog', href: '/#blog' },
-  { label: 'Contato', href: '/#contato' },
-]
 
 const scrolled = ref(false)
 const appStore = useAppStore()
