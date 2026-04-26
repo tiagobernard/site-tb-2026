@@ -36,10 +36,8 @@
             </a>
           </div>
           <div class="flex gap-4">
-            <a href="/privacy" class="label-tag opacity-50 hover:opacity-100 transition-opacity"
-              style="color: var(--color-on-surface-variant);">Política de Privacidade</a>
-            <a href="/terms" class="label-tag opacity-50 hover:opacity-100 transition-opacity"
-              style="color: var(--color-on-surface-variant);">Termos de Uso</a>
+            <a href="/documents/curriculo-Tiago-Bernardes-Especialista-GenAI-Web.pdf" target="_blank" download class="label-tag opacity-50 hover:opacity-100 transition-opacity"
+              style="color: var(--color-on-surface-variant);">Baixar Currículo (PDF)</a>
           </div>
         </div>
       </div>
