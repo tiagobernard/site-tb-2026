@@ -42,7 +42,7 @@
               style="color: var(--color-on-primary); border: none;">
               Ver Projetos
             </UButton>
-            <UButton as="a" href="#contact" size="lg" variant="ghost"
+            <UButton as="a" href="#contato" size="lg" variant="ghost"
               class="font-semibold px-8 border transition-all duration-200 hover:-translate-y-0.5"
               style="color: var(--color-primary); border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);">
               Fale Comigo
