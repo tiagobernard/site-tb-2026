@@ -2,7 +2,7 @@
     {
         "id": 1088,
         "titulo": "Attri",
-        "descricao": "<p>Landing Page desenvolvida para a agência de desenvolvimento Attri de São Paulo/SP.</p>",
+        "descricao": "<p>Landing Page desenvolvida para a agência de marketing digital Attri de São Paulo/SP.</p>",
         "imagem": "/imagens/portfolio/portfolio-attri-tiago-bernardes-genai-dev.png",
         "url_externa": "https://tiagobernardes.com.br/projetos/attri/",
         "tags": [
@@ -47,7 +47,6 @@
         "tags": [
             "wordpress",
             "site institucional",
-            "empreendimento imobiliário",
             "Mango Garden",
             "Attri"
         ]
