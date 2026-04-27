@@ -24,29 +24,27 @@
 
       <!-- Project list -->
       <ul v-else class="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[240px]">
-        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="fade-in group relative glass-panel-subtle rounded-3xl overflow-hidden
-                 transition-all duration-500 hover:-translate-y-1 hover-glow border border-transparent
-                 flex flex-col md:block" :class="getBentoClasses(i)" :style="{ animationDelay: `${i * 0.08}s` }">
+        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="fade-in group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end" :class="getBentoClasses(i)" :style="{
+          backgroundImage: `url(${project.imagem})`,
+          animationDelay: `${i * 0.08}s`
+        }">
 
-          <!-- Desktop CTA Icon (aparece no hover superior direito) -->
+          <!-- Desktop CTA Icon -->
           <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
             :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="ghost"
             icon="i-heroicons-arrow-top-right-on-square"
             class="hidden md:flex absolute top-6 right-6 z-20 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
             aria-label="Acessar" />
 
-          <!-- Imagem: Topo no Mobile, Fundo absoluto no Desktop -->
-          <div class="relative w-full h-56 md:absolute md:inset-0 md:h-full z-0 overflow-hidden shrink-0">
-            <img :src="project.imagem" :alt="project.titulo"
-              class="w-full h-full object-cover object-left-top transition-transform duration-700 md:group-hover:scale-110"
-              loading="lazy" />
-            <!-- Gradient Overlay (Apenas Desktop para leitura do texto) -->
+          <!-- Overlays -->
+          <div class="absolute inset-0 z-0">
+            <!-- Gradient Overlay Base -->
             <div
-              class="hidden md:block absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/40 to-transparent z-0">
+              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/40 to-transparent">
             </div>
-            <!-- Overlay Escuro Adicional no Hover (Usando a cor de superfície do projeto) -->
+            <!-- Overlay Escuro no Hover -->
             <div
-              class="hidden md:block absolute inset-0 bg-[color:var(--color-surface)]/0 group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none group-hover:backdrop-blur-[3px] transition-all duration-500 z-0">
+              class="absolute inset-0 bg-[color:var(--color-surface)]/0 group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none group-hover:backdrop-blur-[3px] transition-all duration-500">
             </div>
           </div>
 
@@ -210,8 +208,26 @@ function goToPage(page: number) {
   }
 }
 
-.hover-glow:hover {
-  box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.2);
+.bento-card-fix {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: inset(0 round 24px);
+  /* Substituindo borda real por shadow interno para evitar artefatos e frestas */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: translateZ(0);
+  will-change: transform;
+  min-height: 280px; /* Altura para mobile */
+}
+
+@media (min-width: 768px) {
+  .bento-card-fix {
+    min-height: 0; /* No desktop o grid controla a altura */
+    height: 100%;
+  }
+}
+
+.bento-card-fix:hover {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 30px 0 rgba(255, 255, 255, 0.15);
 }
 </style>
