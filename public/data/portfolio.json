@@ -1,5 +1,18 @@
 [
     {
+        "id": 1090,
+        "titulo": "Site Tiago Bernardes",
+        "descricao": "<p>Primeira versão do meu site com uso de frameworks depois de ser em WordPress desde 2004.</p>",
+        "imagem": "/imagens/portfolio/portfolio-tb-tiago-bernardes-genai-dev.png",
+        "url_externa": "",
+        "tags": [
+            "vuejs 3",
+            "vue router",
+            "axios",
+            "frontend"
+        ]
+    },
+    {
         "id": 1088,
         "titulo": "Attri",
         "descricao": "<p>Landing Page desenvolvida para a agência de marketing digital Attri de São Paulo/SP.</p>",
