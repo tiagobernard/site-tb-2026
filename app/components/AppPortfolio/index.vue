@@ -3,7 +3,7 @@
     <UContainer>
 
       <!-- Section header — home page only -->
-      <div v-if="preview" class="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6 fade-in">
+      <div v-if="preview" class="reveal mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <p class="label-tag mb-3" style="color: var(--color-tertiary);">Trabalhos em Destaque</p>
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Portfólio Selecionado</h2>
@@ -24,7 +24,7 @@
 
       <!-- Project list -->
       <ul v-else class="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[240px]">
-        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="fade-in group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end" :class="getBentoClasses(i)" :style="{
+        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end" :class="getBentoClasses(i)" :style="{
           backgroundImage: `url(${project.imagem})`,
           animationDelay: `${i * 0.08}s`
         }">
@@ -114,7 +114,7 @@
 
 <script setup lang="ts">
 import axios from 'axios'
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, computed, onMounted, nextTick, watch, onUnmounted } from 'vue'
 
 interface PortfolioItem {
   id: number
@@ -145,6 +145,8 @@ onMounted(async () => {
   } finally {
     pending.value = false
   }
+  await nextTick()
+  initReveal()
 })
 
 const allItems = computed(() => data.value ?? [])
@@ -183,31 +185,50 @@ function getBentoClasses(i: number) {
 function goToPage(page: number) {
   if (page < 1 || page > totalPages.value) return
   currentPage.value = page
+  
+  // Reseta as classes is-visible para que a animação ocorra na nova página
   nextTick(() => {
+    const visibleElements = document.querySelectorAll('#portfolio .reveal.is-visible')
+    visibleElements.forEach(el => el.classList.remove('is-visible'))
+    
     document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    initReveal()
   })
 }
+
+// Lógica de Scroll Reveal personalizada para elementos paginados
+let observer: IntersectionObserver | null = null
+
+const initReveal = () => {
+  const elements = document.querySelectorAll('#portfolio .reveal:not(.is-visible)')
+  if (!elements.length) return
+
+  if (!observer) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer!.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.12 })
+  }
+
+  elements.forEach((el) => observer!.observe(el))
+}
+
+watch(paginatedItems, async () => {
+  await nextTick()
+  initReveal()
+})
+
+onUnmounted(() => {
+  if (observer) observer.disconnect()
+})
 </script>
 
 <style scoped>
-/* Keyframe para fade in reativo quando navegar pela paginação */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* A classe .reveal global (main.css) é utilizada para a animação */
 .bento-card-fix {
   background-size: cover;
   background-position: center;
