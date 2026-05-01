@@ -8,7 +8,7 @@
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Artigos & Tecnologia</h2>
         </div>
         <UButton as="a" href="/posts" variant="ghost" trailing-icon="i-heroicons-chevron-right"
-          class="shrink-0 font-semibold" style="color: var(--color-primary);">Ver todos os Artigos</UButton>
+          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os Artigos</UButton>
       </div>
 
       <!-- Loading State -->
@@ -62,7 +62,7 @@
               {{ post.resumo }}
             </p>
 
-            <span class="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold"
+            <span class="mt-auto pt-2 flex items-center gap-1.5 text-sm font-mono font-medium tracking-wide"
               style="color: var(--color-primary);">
               Leia mais
               <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />

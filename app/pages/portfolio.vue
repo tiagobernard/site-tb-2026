@@ -18,7 +18,7 @@
           </p>
 
           <!-- Main title — typographic statement -->
-          <h1 class="portifolio-title font-black leading-none tracking-tight mb-6"
+          <h1 class="portifolio-title font-black leading-none tracking-tighter mb-6"
             style="color: var(--color-on-surface);">
             Anos de<br />
             <em class="not-italic" style="color: var(--color-primary);">Projetos</em><br />
@@ -34,7 +34,7 @@
           <div class="mt-10 flex flex-wrap gap-8">
             <div v-for="stat in stats" :key="stat.label" class="flex flex-col gap-1">
               <span class="text-3xl font-black" style="color: var(--color-primary);">{{ stat.value }}</span>
-              <span class="text-xs uppercase tracking-widest" style="color: var(--color-outline);">{{ stat.label
+              <span class="text-xs font-mono uppercase tracking-widest" style="color: var(--color-outline);">{{ stat.label
                 }}</span>
             </div>
           </div>

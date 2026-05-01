@@ -9,7 +9,7 @@
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Portfólio Selecionado</h2>
         </div>
         <UButton as="a" href="/portfolio" variant="ghost" trailing-icon="i-heroicons-arrow-right"
-          class="shrink-0 font-semibold" style="color: var(--color-primary);">Ver todos os projetos</UButton>
+          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os projetos</UButton>
       </div>
 
       <!-- Loading state -->
@@ -74,7 +74,7 @@
                       <!-- Badges Minimalistas -->
                       <ul class="flex flex-wrap gap-2">
                         <li v-for="tag in project.tags" :key="tag"
-                          class="px-2.5 py-0.5 text-[11px] font-medium rounded-md uppercase tracking-wider md:bg-transparent md:text-white md:border md:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
+                          class="px-2.5 py-0.5 text-[11px] font-mono font-medium rounded-md uppercase tracking-wider md:bg-transparent md:text-white md:border md:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
                           {{ tag }}
                         </li>
                       </ul>
@@ -83,7 +83,7 @@
                       <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
                         :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
                         trailing-icon="i-heroicons-arrow-top-right-on-square"
-                        class="md:hidden shrink-0 font-medium rounded-full px-4" style="color: var(--color-primary);">
+                        class="md:hidden shrink-0 font-mono font-medium rounded-full px-4" style="color: var(--color-primary);">
                         Acessar</UButton>
                     </div>
                   </div>

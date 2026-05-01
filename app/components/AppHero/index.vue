@@ -14,12 +14,11 @@
           <!-- Label tag -->
           <div class="reveal glass-panel py-2 px-4 rounded-xl max-w-fit label-tag mb-6"
             style="color: var(--color-primary);">
-            Especialista em
-            Desenvolvimento Web
+            Especialista em Desenvolvimento Web
           </div>
 
           <!-- Headline — asymmetric, editorial weight -->
-          <h1 class="reveal display-md min-[1367px]:display-lg mb-6"
+          <h1 class="reveal display-md min-[1367px]:display-lg mb-6 font-black tracking-tighter"
             style="color: var(--color-on-surface); animation-delay: 0.1s;">
             Tiago Bernardes<br />
             Especialista em<br />
@@ -38,12 +37,12 @@
           <!-- CTAs -->
           <div class="reveal flex flex-wrap gap-4" style="animation-delay: 0.3s;">
             <UButton as="a" href="#portfolio" size="lg"
-              class="gradient-primary font-semibold px-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+              class="gradient-primary font-mono font-semibold tracking-wide px-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               style="color: var(--color-on-primary); border: none;">
               Ver Projetos
             </UButton>
             <UButton as="a" href="#contato" size="lg" variant="ghost"
-              class="font-semibold px-8 border transition-all duration-200 hover:-translate-y-0.5"
+              class="font-mono font-semibold tracking-wide px-8 border transition-all duration-200 hover:-translate-y-0.5"
               style="color: var(--color-primary); border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);">
               Fale Comigo
             </UButton>
@@ -53,7 +52,7 @@
           <div class="reveal mt-10 flex flex-wrap gap-8" style="animation-delay: 0.4s;">
             <div v-for="stat in stats" :key="stat.label" class="flex flex-col">
               <span class="text-3xl font-bold" style="color: var(--color-primary);">{{ stat.value }}</span>
-              <span class="text-sm" style="color: var(--color-on-surface-variant);">{{ stat.label }}</span>
+              <span class="text-sm font-mono tracking-wide" style="color: var(--color-on-surface-variant);">{{ stat.label }}</span>
             </div>
           </div>
         </div>

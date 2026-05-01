@@ -6,7 +6,7 @@
     <li v-for="link in navLinks" :key="link.to">
       <NuxtLink 
         :to="link.to"
-        class="text-sm font-medium transition-colors duration-200 hover:opacity-100"
+        class="text-sm font-mono font-medium tracking-wide transition-colors duration-200 hover:opacity-100"
         :class="[
            direction === 'vertical' && mobile ? 'block px-3 py-2 rounded-lg opacity-70' : 'opacity-70'
         ]"

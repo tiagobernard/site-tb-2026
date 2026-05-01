@@ -11,7 +11,7 @@
         <p class="reveal label-tag mb-4" style="color: var(--color-tertiary);">Vamos Conversar</p>
 
         <!-- Headline -->
-        <h2 class="reveal display-md mb-6" style="color: var(--color-on-surface); animation-delay: 0.1s;">
+        <h2 class="reveal display-md tracking-tighter mb-6" style="color: var(--color-on-surface); animation-delay: 0.1s;">
           Vamos construir algo<br />
           <span style="color: var(--color-primary);">extraordinário?</span>
         </h2>

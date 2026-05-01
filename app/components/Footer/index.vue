@@ -22,7 +22,7 @@
         <div class="flex flex-col gap-4 md:items-end">
           <AppSocialLinks size="sm" />
           <div class="flex gap-4">
-            <a href="/documents/curriculo-Tiago-Bernardes-Especialista-GenAI-Web.pdf" target="_blank" download class="label-tag opacity-50 hover:opacity-100 transition-opacity"
+            <a href="/documents/curriculo-Tiago-Bernardes-Especialista-GenAI-Web.pdf" target="_blank" download class="label-tag font-mono opacity-50 hover:opacity-100 transition-opacity"
               style="color: var(--color-on-surface-variant);">Baixar Currículo (PDF)</a>
           </div>
         </div>

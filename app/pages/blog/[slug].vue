@@ -13,11 +13,11 @@
             <span v-if="post.tags && post.tags.length > 0">{{ post.tags.join(', ') }}</span>
           </p>
 
-          <h1 class="post-title font-black leading-tight mb-6" style="color: var(--color-on-surface);">
+          <h1 class="post-title font-black leading-tight tracking-tighter mb-6" style="color: var(--color-on-surface);">
             {{ post.titulo }}
           </h1>
 
-          <p class="text-sm tracking-widest uppercase" style="color: var(--color-outline);">
+          <p class="text-sm font-mono tracking-widest uppercase" style="color: var(--color-outline);">
             {{ post.date }}
           </p>
         </div>
@@ -186,7 +186,7 @@ definePageMeta({
 }
 
 .artigo-container :deep(pre code) {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.95rem;
   color: #e2e8f0;
   background: transparent;
@@ -200,7 +200,7 @@ definePageMeta({
   padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
-  font-family: 'Fira Code', monospace;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .artigo-container :deep(ul) {

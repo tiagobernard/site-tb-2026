@@ -18,7 +18,7 @@
           </p>
 
           <!-- Main title — typographic statement -->
-          <h1 class="blog-title font-black leading-none tracking-tight mb-6" style="color: var(--color-on-surface);">
+          <h1 class="blog-title font-black leading-none tracking-tighter mb-6" style="color: var(--color-on-surface);">
             Artigos e<br />
             <em class="not-italic" style="color: var(--color-primary);">Insights</em>
           </h1>

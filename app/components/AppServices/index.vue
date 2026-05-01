@@ -26,7 +26,7 @@
 
           <!-- Subtle CTA -->
           <a href="#contato"
-            class="mt-auto flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 hover:gap-2.5"
+            class="mt-auto flex items-center gap-1.5 text-sm font-mono font-medium tracking-wide transition-all duration-200 hover:gap-2.5"
             style="color: var(--color-primary);">
             Saiba mais
             <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
