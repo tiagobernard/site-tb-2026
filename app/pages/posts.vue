@@ -37,10 +37,10 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Blog – Especialista em Front-end, IA & Performance',
-  description: 'Leia artigos completos sobre Vue.js, React, CSS, performance web, e design UI/UX da perspectiva de um programador front-end especialista.',
-  ogTitle: 'Blog de Tiago Bernardes – Insights & Tutoriais',
-  ogDescription: 'Descubra tutoriais avançados, dicas e análises sobre desenvolvimento web moderno.',
+  title: 'Artigos e Insights | Desenvolvimento Web, UI/UX & Performance',
+  description: 'Acompanhe tutoriais, dicas de performance, novidades do ecossistema front-end e reflexões sobre design de UI/UX e arquitetura de desenvolvimento de software.',
+  ogTitle: 'Artigos e Insights | Tiago Bernardes',
+  ogDescription: 'Tutoriais, dicas de performance, novidades do ecossistema front-end e reflexões sobre design de UI/UX e desenvolvimento de software.',
   ogImage: '/data/tiago-bernardes-blog-banner.png',
   twitterCard: 'summary_large_image',
 })

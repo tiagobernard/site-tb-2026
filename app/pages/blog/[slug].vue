@@ -76,7 +76,7 @@ const { data: post, pending } = useAsyncData(`post-${slug}`, async () => {
 }, { server: false })
 
 useSeoMeta({
-  title: () => post.value ? `${post.value.titulo} – Blog` : 'Carregando Artigo...',
+  title: () => post.value ? `${post.value.titulo} | Tiago Bernardes` : 'Carregando Artigo...',
   description: () => post.value ? post.value.resumo : 'Confira mais um artigo no blog de Tiago Bernardes.',
   ogTitle: () => post.value ? post.value.titulo : 'Artigo do Blog',
   ogDescription: () => post.value ? post.value.resumo : '',

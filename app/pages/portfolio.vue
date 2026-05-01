@@ -49,10 +49,10 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Portfólio – Especialista em Desenvolvimento Web de Alta Performance',
-  description: 'Conheça os projetos desenvolvidos por Tiago Bernardes ao longo de mais de 10 anos: e-commerces, sites institucionais, lojas virtuais e sistemas web com WordPress, Vue.js e muito mais.',
-  ogTitle: 'Portfólio Completo – Tiago Bernardes',
-  ogDescription: 'Mais de 40 projetos entregues. Do e-commerce ao sistema web sob medida — veja o histórico real de entregas em WordPress, WooCommerce, Vue.js e outras tecnologias.',
+  title: 'Portfólio Completo | Projetos Reais de Desenvolvimento Web',
+  description: 'Explore mais de duas décadas construindo soluções digitais premium: e-commerces, sites institucionais, plataformas educacionais e sistemas web sob medida.',
+  ogTitle: 'Portfólio Completo | Tiago Bernardes',
+  ogDescription: 'Mais de duas décadas de experiência. Do e-commerce ao sistema web sob medida — veja o histórico de projetos reais e soluções digitais de alta performance.',
   ogImage: '/imagens/portfolio/lab82-site-wordpress-quadrilha-djonga.png',
   twitterCard: 'summary_large_image',
 })
