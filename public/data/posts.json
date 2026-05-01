@@ -1,5 +1,50 @@
 [
     {
+        "id": 7,
+        "imagem": "/imagens/blog/tiago-bernardes-alem-da-UX- arquitetura-por-tras-da-validacao-de-formularios.png",
+        "titulo": "Além da UX: A arquitetura por trás da validação de formulários",
+        "slug": "alem-da-ux-arquitetura-por-tras-da-validacao-de-formularios",
+        "tags": [
+            "Nuxt 4",
+            "Zod",
+            "Regle",
+            "Arquitetura"
+        ],
+        "date": "30/04/2026",
+        "resumo": "Como estruturar o código para que decisões de interface sejam simples de manter? Conheça a stack modular utilizando Zod, Regle e Maska no Nuxt 4 para formulários complexos.",
+        "artigo": "<h3>Arquitetura de Validação Modular</h3>\n<p>Há duas semanas, compartilhei aqui o dilema entre Eager e Late Validation. Hoje, quero aprofundar na \"cozinha\" técnica: como estruturo o código para que essas decisões de interface sejam simples de implementar e manter.</p>\n<p>Para garantir que a lógica de validação não se torne um pesadelo em formulários complexos (como steppers), tenho adotado uma abordagem modular no Nuxt 4 utilizando o trio Zod + Regle + Maska:</p>\n<ol>\n    <li><strong>Zod (O Contrato):</strong> É o meu \"Single Source of Truth\". O schema define não apenas as regras, mas toda a tipagem do formulário. Com ele, consigo validar blocos específicos de forma isolada, garantindo integridade antes mesmo do dado chegar ao backend.</li>\n    <li><strong>Regle (A Reatividade):</strong> Funciona como a ponte reativa. Ele observa o estado do Vue e integra os schemas do Zod sem poluir o componente com lógica repetitiva, permitindo um controle fino sobre quando os erros devem aparecer.</li>\n    <li><strong>Maska (A Experiência):</strong> Atua na linha de frente. Garante que o usuário siga o formato correto (CPF, CNPJ, Telefone) durante a digitação, o que reduz drasticamente a incidência de erros de validação lógica.</li>\n</ol>\n<p>O benefício real dessa estrutura é o desacoplamento, onde as regras de negócio moram em schemas, a flexibilidade para ajustar comportamentos no Regle e a segurança de tipos que o TypeScript proporciona.</p>\n<p>E você, prefere manter as regras de validação dentro do componente ou utiliza schemas externos para centralizar a lógica?</p>"
+    },
+    {
+        "id": 6,
+        "imagem": "/imagens/blog/tiago-bernardes-o-que-1998-pode-nos-ensinar-sobre-o-futuro-da-ia.png",
+        "titulo": "O que 1998 pode nos ensinar sobre o futuro da IA?",
+        "slug": "o-que-1998-pode-nos-ensinar-sobre-o-futuro-da-ia",
+        "tags": [
+            "IA",
+            "Engenharia",
+            "Contexto",
+            "GenAI"
+        ],
+        "date": "28/04/2026",
+        "resumo": "Nos anos 90, RAM era sagrada. Hoje, o contexto na IA é o novo recurso escasso. Aprenda por que a senioridade atual reside em saber limpar o terreno e focar no essencial.",
+        "artigo": "<p>Quem codava nos anos 90 sabe: cada byte era uma vitória e a memória RAM era o recurso mais sagrado do sistema. Se você não gerenciasse bem os recursos, o projeto simplesmente não rodava.</p>\n<p>Recentemente, parei para refletir: será que estamos usando as ferramentas e recursos de IA da forma certa hoje, ou estamos tratando o \"contexto\" como se fosse infinito? Naquela época, aprendemos a ser cirúrgicos. Hoje, com a abundância de LLMs, agentes e MCPs, é fácil cair na armadilha de entupir o modelo com informações desnecessárias, o que gera lentidão, custo e alucinações.</p>\n<p>Minha conclusão: A senioridade hoje não está apenas em saber escrever o prompt, mas em saber \"limpar o terreno\".</p>\n<ul>\n    <li><strong>Contexto é a nova RAM:</strong> Se você entope a IA com lixo, ela vai te entregar ruído.</li>\n    <li><strong>Ferramentas certas:</strong> Às vezes, uma CLI resolve o que um agente pesado complica.</li>\n    <li><strong>Propósito:</strong> Passamos mais tempo \"afiando o machado\" para que o corte seja preciso.</li>\n</ul>\n<p>A tecnologia mudou, mas a disciplina de engenharia continua a mesma. No meu fluxo com GenAI, tenho voltado às raízes: tratar o contexto como recurso escasso para extrair o máximo de inteligência estratégica.</p>\n<p>E você? Está tratando o contexto da sua IA como RAM de 1998 ou como se fosse infinito?</p>"
+    },
+    {
+        "id": 5,
+        "imagem": "/imagens/blog/tiago-bernardes-validacao-de-formularios-eager-vs-late-validation.png",
+        "titulo": "Validação de Formulários: Eager vs. Late Validation",
+        "slug": "validacao-de-formularios-eager-vs-late-validation",
+        "tags": [
+            "UX",
+            "Zod",
+            "Nuxt 4",
+            "WebDev"
+        ],
+        "date": "17/04/2026",
+        "resumo": "Você prefere validar o erro na hora ou apenas no final? Explore o dilema entre Eager e Late Validation e como encontrar o equilíbrio técnico usando Nuxt UI e Zod.",
+        "artigo": "<p>Você já preencheu um formulário longo, dividido em etapas (Stepper), e só descobriu que errou o CPF na primeira fase quando clicou em \"Finalizar\" na última? 🤯 Frustrante, né?</p>\n<p>Estou trabalhando na implementação de validações com <strong>Zod</strong> em um projeto <strong>Nuxt 4</strong> e me deparei com esse dilema clássico de UX/UI:</p>\n<ol>\n    <li><strong>Eager Validation (Validação Imediata):</strong> O erro aparece assim que o usuário preenche o campo ou tenta avançar de etapa. Previne erros acumulados, mas pode ser percebido como agressivo.</li>\n    <li><strong>Late Validation (Validação Tardia):</strong> O erro só aparece no final de todo o processo. Oferece navegação fluida, mas o risco de frustração ao precisar voltar várias etapas é alto.</li>\n</ol>\n<p>Meu ponto de vista técnico: O meio-termo. Usando o componente <code>UForm</code> do Nuxt UI e Schemas parciais do <strong>Zod</strong>, validamos o bloco completo apenas quando o usuário clica em \"Próximo\". Mantemos a fluidez de cada etapa, mas garantimos que ele não chegue ao fim com pendências ocultas.</p><p>E você? Qual estratégia prefere adotar nos seus projetos para equilibrar fluidez e prevenção de erros?</p>"
+    },
+    {
         "id": 4,
         "imagem": "/imagens/blog/tiago-bernardes-blog-css-seletor-where.jpg",
         "titulo": "Um recurso incrível, otimize seu CSS com o seletor :where()",
