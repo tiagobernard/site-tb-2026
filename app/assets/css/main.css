@@ -63,15 +63,15 @@ body {
 /* ─── Glass Panel Utility ───────────────────────── */
 .glass-panel {
   background: color-mix(in srgb, var(--color-surface-high) 80%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid color-mix(in srgb, var(--color-on-surface-variant) 10%, transparent);
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 .glass-panel-subtle {
   background: color-mix(in srgb, var(--color-surface-low) 60%, transparent);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 /* ─── Primary Gradient Utility ──────────────────── */
