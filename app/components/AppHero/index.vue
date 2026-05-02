@@ -71,9 +71,10 @@
           <div
             class="relative w-56 h-56 md:w-56 md:h-56 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
-            <img src="/imagens/perfil/tiago-bernardes-genai-developer.png"
+            <NuxtImg src="/imagens/perfil/tiago-bernardes-genai-developer.png"
               alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI"
-              class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);" />
+              class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);"
+              loading="eager" fetchpriority="high" width="400" height="400" />
           </div>
         </div>
 

@@ -26,11 +26,14 @@
       <!-- Project list -->
       <ul v-else class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:auto-rows-[220px] lg:auto-rows-[240px]">
         <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage"
-          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end"
+          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end overflow-hidden"
           :class="[getBentoClasses(i), i === 5 && preview ? 'md:hidden lg:flex' : '']" :style="{
-            backgroundImage: `url(${project.imagem})`,
             animationDelay: `${i * 0.08}s`
           }">
+
+          <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy" 
+            :sizes="i === 0 ? 'xs:100vw sm:100vw md:768px lg:900px' : 'xs:100vw sm:50vw md:400px'"
+            class="absolute inset-0 w-full h-full object-cover -z-10" />
 
           <!-- Desktop CTA Icon -->
           <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
@@ -246,9 +249,6 @@ onUnmounted(() => {
 <style scoped>
 /* A classe .reveal global (main.css) é utilizada para a animação */
 .bento-card-fix {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   clip-path: inset(0 round 24px);
   /* Substituindo borda real por shadow interno para evitar artefatos e frestas */
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);

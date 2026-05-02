@@ -30,8 +30,9 @@
           :style="{ animationDelay: `${i * 0.1}s` }">
           <!-- Cover Image -->
           <div class="relative w-full h-48 sm:h-56 bg-zinc-800 shrink-0 overflow-hidden">
-            <img v-if="post.imagem" :src="post.imagem" :alt="post.titulo"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <NuxtImg v-if="post.imagem" :src="post.imagem" :alt="post.titulo"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy" sizes="xs:100vw sm:50vw md:400px" />
             <div v-else class="w-full h-full flex items-center justify-center opacity-50">
               <UIcon name="i-heroicons-photo" class="w-10 h-10" />
             </div>
