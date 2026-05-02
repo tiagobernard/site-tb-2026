@@ -11,7 +11,8 @@
         <p class="reveal label-tag mb-4" style="color: var(--color-tertiary);">Vamos Conversar</p>
 
         <!-- Headline -->
-        <h2 class="reveal display-md tracking-tighter mb-6" style="color: var(--color-on-surface); animation-delay: 0.1s;">
+        <h2 class="reveal display-md tracking-tighter mb-6"
+          style="color: var(--color-on-surface); animation-delay: 0.1s;">
           Vamos construir algo<br />
           <span style="color: var(--color-primary);">extraordinário?</span>
         </h2>
@@ -20,7 +21,8 @@
         <p class="reveal text-lg leading-relaxed mb-10 max-w-xl mx-auto"
           style="color: var(--color-on-surface-variant); animation-delay: 0.2s;">
           Estou disponível para novas oportunidades e colaborações estratégicas.
-          Entre em contato através dos canais abaixo e vamos transformar sua ideia em uma arquitetura digital de alta performance.
+          Entre em contato através dos canais abaixo e vamos transformar sua ideia em uma arquitetura digital de alta
+          performance.
         </p>
 
         <!-- Social links -->

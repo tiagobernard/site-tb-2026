@@ -12,7 +12,7 @@
       </div>
 
       <!-- Bento Grid -->
-      <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <li v-for="(tech, i) in techs" :key="tech.name"
           class="tech-card reveal group relative flex rounded-2xl cursor-default overflow-hidden glass-panel-subtle"
           :class="[tech.core ? 'col-span-2' : 'col-span-1']" :style="{

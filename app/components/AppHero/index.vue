@@ -8,9 +8,9 @@
       class="pointer-events-none absolute bottom-0 -left-32 w-[400px] h-[400px] rounded-full opacity-8"
       style="background: radial-gradient(circle, var(--color-primary-container) 0%, transparent 70%); filter: blur(60px);" />
 
-    <UContainer class="relative flex z-10 py-24 md:py-32">
+    <UContainer class="relative flex z-10 py-24 md:py-28 lg:py-32">
       <div>
-        <div class="max-w-4xl">
+        <div class="md:max-w-lg lg:max-w-4xl">
           <!-- Label tag -->
           <div class="reveal glass-panel py-2 px-4 rounded-xl max-w-fit label-tag mb-6"
             style="color: var(--color-primary);">
@@ -58,9 +58,9 @@
         </div>
       </div>
       <!-- Right column: Profile Image & Quote / Bio Card -->
-      <div class="hidden lg:flex flex-col items-center justify-center flex-1 pl-16 gap-12">
+      <div class="hidden md:flex flex-col items-center justify-center flex-1 pl-8 lg:pl-16 gap-8 lg:gap-12">
         <!-- Profile Image -->
-        <div class="reveal relative group max-[1367px]:-mb-30" style="animation-delay: 0.25s;">
+        <div class="reveal relative group lg:-mb-30" style="animation-delay: 0.25s;">
           <!-- Stylistic glow effect -->
           <div
             class="absolute inset-0 rounded-full blur-2xl opacity-40 translate-y-2 scale-105 transition-opacity duration-500 group-hover:opacity-60"
@@ -69,7 +69,7 @@
           </div>
           <!-- Avatar with gradient border -->
           <div
-            class="relative w-80 h-80 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            class="relative w-56 h-56 md:w-56 md:h-56 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
             <img src="/imagens/perfil/tiago-bernardes-genai-developer.png"
               alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI"
@@ -78,7 +78,7 @@
         </div>
 
         <!-- Quote / Bio Card -->
-        <div class="reveal glass-panel rounded-2xl p-8 max-w-md w-full relative" style="animation-delay: 0.35s;">
+        <div class="reveal glass-panel rounded-2xl p-8 max-w-md w-full relative mt-auto" style="animation-delay: 0.35s;">
           <!-- Quote icon badge -->
           <div
             class="absolute -top-4 -left-4 w-10 h-10 rounded-xl flex items-center justify-center text-xl font-black leading-none"

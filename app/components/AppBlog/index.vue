@@ -8,7 +8,8 @@
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Artigos & Tecnologia</h2>
         </div>
         <UButton as="a" href="/posts" variant="ghost" trailing-icon="i-heroicons-chevron-right"
-          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os Artigos</UButton>
+          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os Artigos
+        </UButton>
       </div>
 
       <!-- Loading State -->
@@ -22,9 +23,10 @@
       </div>
 
       <!-- Blog cards grid -->
-      <ul v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <ul v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <li v-for="(post, i) in posts" :key="post.slug" class="reveal glass-panel rounded-2xl overflow-hidden flex flex-col
                  transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+          :class="[i === 3 && limit === 3 ? 'hidden md:flex lg:hidden' : '']"
           :style="{ animationDelay: `${i * 0.1}s` }">
           <!-- Cover Image -->
           <div class="relative w-full h-48 sm:h-56 bg-zinc-800 shrink-0 overflow-hidden">
@@ -101,8 +103,8 @@ const props = defineProps({
 const { data: posts, pending, error } = useAsyncData('latest-blog-posts-' + props.limit, async () => {
   try {
     const res = await axios.get<BlogPost[]>('/data/posts.json')
-    // Retorna a quantidade baseada na prop (futura base de paginação)
-    return res.data.slice(0, props.limit)
+    // Busca +1 artigo caso limit seja 3 para suprir o layout do tablet harmoniosamente
+    return res.data.slice(0, props.limit === 3 ? 4 : props.limit)
   } catch (err) {
     console.error('Failed to fetch blog posts:', err)
     throw err

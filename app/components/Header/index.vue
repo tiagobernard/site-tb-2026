@@ -7,12 +7,12 @@
         <AppLogo size="lg" class="group" />
 
         <!-- Desktop Nav -->
-        <div class="hidden md:block">
+        <div class="hidden lg:block">
           <AppMainMenu direction="horizontal" />
         </div>
 
         <!-- CTA Desktop -->
-        <div class="hidden md:flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-3">
           <UButton as="a" href="/#contato" size="sm"
             class="gradient-primary font-mono font-semibold tracking-wide transition-transform duration-200 hover:-translate-y-0.5"
             style="color: var(--color-on-primary); border: none;">
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Mobile Hamburger -->
-        <UButton id="mobile-menu-btn" variant="ghost" size="xl" class="md:hidden"
+        <UButton id="mobile-menu-btn" variant="ghost" size="xl" class="lg:hidden"
           :icon="mobileOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'"
           :aria-label="mobileOpen ? 'Fechar menu' : 'Abrir menu'" @click="mobileOpen = !mobileOpen" />
       </nav>
@@ -29,7 +29,7 @@
 
     <!-- Mobile Menu -->
     <Transition name="slide-down">
-      <div v-if="mobileOpen" class="md:hidden glass-panel border-t" style="border-color: var(--color-outline-variant);">
+      <div v-if="mobileOpen" class="lg:hidden glass-panel border-t" style="border-color: var(--color-outline-variant);">
         <UContainer>
           <div class="py-4 flex flex-col gap-1">
             <AppMainMenu direction="vertical" mobile @link-click="mobileOpen = false" />

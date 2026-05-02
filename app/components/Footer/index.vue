@@ -1,7 +1,7 @@
 <template>
   <footer style="background-color: var(--color-surface-dim); border-top: 1px solid var(--color-outline-variant);">
     <UContainer>
-      <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div class="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         <!-- Brand -->
         <div class="flex flex-col gap-3">
           <div>
@@ -19,7 +19,7 @@
         </nav>
 
         <!-- Social + legal links -->
-        <div class="flex flex-col gap-4 md:items-end">
+        <div class="flex flex-col gap-4 md:col-span-2 lg:col-span-1 md:flex-row md:items-center md:justify-between lg:flex-col lg:items-end lg:justify-start">
           <AppSocialLinks size="sm" />
           <div class="flex gap-4">
             <a href="/documents/curriculo-Tiago-Bernardes-Especialista-GenAI-Web.pdf" target="_blank" download class="label-tag font-mono opacity-50 hover:opacity-100 transition-opacity"

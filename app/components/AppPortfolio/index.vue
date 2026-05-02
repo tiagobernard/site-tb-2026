@@ -9,7 +9,8 @@
           <h2 class="headline-lg" style="color: var(--color-on-surface);">Portfólio Selecionado</h2>
         </div>
         <UButton as="a" href="/portfolio" variant="ghost" trailing-icon="i-heroicons-arrow-right"
-          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os projetos</UButton>
+          class="shrink-0 font-mono font-medium tracking-wide" style="color: var(--color-primary);">Ver todos os
+          projetos</UButton>
       </div>
 
       <!-- Loading state -->
@@ -23,11 +24,13 @@
       </div>
 
       <!-- Project list -->
-      <ul v-else class="grid grid-cols-1 md:grid-cols-12 gap-6 md:auto-rows-[240px]">
-        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage" class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end" :class="getBentoClasses(i)" :style="{
-          backgroundImage: `url(${project.imagem})`,
-          animationDelay: `${i * 0.08}s`
-        }">
+      <ul v-else class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:auto-rows-[220px] lg:auto-rows-[240px]">
+        <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage"
+          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end"
+          :class="[getBentoClasses(i), i === 5 && preview ? 'md:hidden lg:flex' : '']" :style="{
+            backgroundImage: `url(${project.imagem})`,
+            animationDelay: `${i * 0.08}s`
+          }">
 
           <!-- Desktop CTA Icon -->
           <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
@@ -40,7 +43,7 @@
           <div class="absolute inset-0 z-0">
             <!-- Gradient Overlay Base -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/40 to-transparent">
+              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 md:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 md:to-transparent">
             </div>
             <!-- Overlay Escuro no Hover -->
             <div
@@ -65,7 +68,7 @@
                   <div
                     class="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-3 md:pb-2">
                     <div
-                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:text-gray-200 line-clamp-2"
+                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:text-gray-200 md:line-clamp-2"
                       v-html="project.descricao" />
 
                     <!-- Tech chips & Mobile CTA -->
@@ -83,7 +86,8 @@
                       <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
                         :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
                         trailing-icon="i-heroicons-arrow-top-right-on-square"
-                        class="md:hidden shrink-0 font-mono font-medium rounded-full px-4" style="color: var(--color-primary);">
+                        class="md:hidden shrink-0 font-mono font-medium rounded-full px-4"
+                        style="color: var(--color-primary);">
                         Acessar</UButton>
                     </div>
                   </div>
@@ -129,7 +133,10 @@ const props = defineProps<{
   preview?: boolean
 }>()
 
-const pageSize = 10
+const isTablet = ref(false)
+let handleResize: () => void
+
+const pageSize = computed(() => isTablet.value ? 11 : 10)
 const currentPage = ref(1)
 
 const data = ref<PortfolioItem[]>([])
@@ -137,6 +144,12 @@ const pending = ref(true)
 const error = ref(null)
 
 onMounted(async () => {
+  handleResize = () => {
+    isTablet.value = window.innerWidth >= 768 && window.innerWidth < 1024
+  }
+  handleResize()
+  window.addEventListener('resize', handleResize)
+
   try {
     const response = await axios.get('/data/portfolio.json')
     data.value = response.data
@@ -156,26 +169,28 @@ const displayedItems = computed(() =>
 )
 
 const totalPages = computed(() =>
-  Math.ceil(displayedItems.value.length / pageSize)
+  Math.ceil(displayedItems.value.length / pageSize.value)
 )
 
 const paginatedItems = computed(() => {
   if (props.preview) return displayedItems.value
-  const start = (currentPage.value - 1) * pageSize
-  return displayedItems.value.slice(start, start + pageSize)
+  const start = (currentPage.value - 1) * pageSize.value
+  return displayedItems.value.slice(start, start + pageSize.value)
 })
 
 const bentoClasses = [
-  'md:col-span-8 md:row-span-2', // i=0: Destaque
-  'md:col-span-4 md:row-span-1', // i=1: Secundário
-  'md:col-span-4 md:row-span-1', // i=2: Secundário
-  'md:col-span-4 md:row-span-1', // i=3
-  'md:col-span-4 md:row-span-1', // i=4
-  'md:col-span-4 md:row-span-1', // i=5
-  'md:col-span-6 md:row-span-1', // i=6
-  'md:col-span-6 md:row-span-1', // i=7
-  'md:col-span-6 md:row-span-1', // i=8
-  'md:col-span-6 md:row-span-1', // i=9
+  'md:col-span-8 lg:col-span-8 md:row-span-2', // i=0: Destaque
+  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=1: Secundário
+  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=2: Secundário
+  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=3
+  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=4
+  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=5
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=6
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=7
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=8
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=9
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=10 (Tablet Extra)
+  'md:col-span-4 lg:col-span-6 md:row-span-1', // i=11 (Safety)
 ]
 
 function getBentoClasses(i: number) {
@@ -185,12 +200,12 @@ function getBentoClasses(i: number) {
 function goToPage(page: number) {
   if (page < 1 || page > totalPages.value) return
   currentPage.value = page
-  
+
   // Reseta as classes is-visible para que a animação ocorra na nova página
   nextTick(() => {
     const visibleElements = document.querySelectorAll('#portfolio .reveal.is-visible')
     visibleElements.forEach(el => el.classList.remove('is-visible'))
-    
+
     document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     initReveal()
   })
@@ -224,6 +239,7 @@ watch(paginatedItems, async () => {
 
 onUnmounted(() => {
   if (observer) observer.disconnect()
+  if (handleResize) window.removeEventListener('resize', handleResize)
 })
 </script>
 
@@ -238,12 +254,14 @@ onUnmounted(() => {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   transform: translateZ(0);
   will-change: transform;
-  min-height: 280px; /* Altura para mobile */
+  min-height: 280px;
+  /* Altura para mobile */
 }
 
 @media (min-width: 768px) {
   .bento-card-fix {
-    min-height: 0; /* No desktop o grid controla a altura */
+    min-height: 0;
+    /* No desktop o grid controla a altura */
     height: 100%;
   }
 }
