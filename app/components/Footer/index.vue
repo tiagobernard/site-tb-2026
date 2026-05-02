@@ -37,8 +37,9 @@
         <p class="label-tag opacity-40" style="color: var(--color-on-surface);">
           Desenvolvido com Nuxt 4 + Nuxt UI
         </p>
-        <img alt="GitHub last commit"
-          src="https://img.shields.io/github/last-commit/tiagobernard/site-tb-2026?label=%C3%BAltima%20atualiza%C3%A7%C3%A3o&logo=git">
+        <NuxtImg alt="GitHub last commit"
+          src="https://img.shields.io/github/last-commit/tiagobernard/site-tb-2026?label=%C3%BAltima%20atualiza%C3%A7%C3%A3o&logo=git"
+          loading="lazy" />
       </div>
     </UContainer>
   </footer>

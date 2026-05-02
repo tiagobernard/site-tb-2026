@@ -68,7 +68,7 @@
         "id": 1080,
         "titulo": "Cea do Brasil",
         "descricao": "Em parceria com a agência digital Pixal de São Bernardo do Campo, desenvolvemos este grande site para a Cea do Brasil, empresa de soluções para o tratamento de água.",
-        "imagem": "imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.png",
         "url_externa": "https://ceadobrasil.com.br/",
         "tags": [
             "wordpress",

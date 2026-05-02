@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxt/image', '@nuxtjs/fontaine'],
 
   image: {
-    format: ['webp', 'avif'],
+    format: ['webp'],
     screens: {
       xs: 320,
       sm: 640,

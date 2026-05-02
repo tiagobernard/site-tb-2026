@@ -33,6 +33,7 @@
 
           <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy" 
             :sizes="i === 0 ? 'xs:100vw sm:100vw md:768px lg:900px' : 'xs:100vw sm:50vw md:400px'"
+            format="webp"
             class="absolute inset-0 w-full h-full object-cover -z-10" />
 
           <!-- Desktop CTA Icon -->

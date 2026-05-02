@@ -74,7 +74,7 @@
             <NuxtImg src="/imagens/perfil/tiago-bernardes-genai-developer.png"
               alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI"
               class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);"
-              loading="eager" fetchpriority="high" width="400" height="400" />
+              loading="eager" fetchpriority="high" width="400" height="400" format="webp" />
           </div>
         </div>
 

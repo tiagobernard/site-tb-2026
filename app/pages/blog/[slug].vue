@@ -29,7 +29,8 @@
       <UContainer>
         <div class="max-w-3xl mx-auto">
           <!-- Featured Image -->
-          <img v-if="post.imagem" :src="post.imagem" :alt="post.titulo" class="w-full rounded-2xl mb-12 shadow-xl" />
+          <NuxtImg v-if="post.imagem" :src="post.imagem" :alt="post.titulo" class="w-full rounded-2xl mb-12 shadow-xl"
+            loading="eager" sizes="xs:100vw sm:100vw md:800px lg:900px" format="webp" />
 
           <!-- HTML output area -->
           <div 
