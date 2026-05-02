@@ -1,10 +1,24 @@
 [
     {
+        "id": 1092,
+        "titulo": "Portfolio Tiago Bernardes 2026",
+        "descricao": "<p>Versão 2026 do meu portfólio profissional, focado em GenAI e desenvolvimento web de alta performance com Nuxt 4 e Tailwind CSS v4.</p>",
+        "imagem": "/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://github.com/tiagobernard/site-tb-2026",
+        "tags": [
+            "Nuxt 4",
+            "Tailwind v4",
+            "Clean Code",
+            "High Performance",
+            "Software Architecture"
+        ]
+    },
+    {
         "id": 1090,
         "titulo": "Site Tiago Bernardes",
         "descricao": "<p>Primeira versão do meu site com uso de frameworks depois de ser em WordPress desde 2004.</p>",
         "imagem": "/imagens/portfolio/portfolio-tb-tiago-bernardes-genai-dev.png",
-        "url_externa": "",
+        "url_externa": "https://github.com/tiagobernard/site-tb-vue",
         "tags": [
             "vuejs 3",
             "vue router",
