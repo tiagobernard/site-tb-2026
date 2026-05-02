@@ -39,18 +39,18 @@
           <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
             :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="ghost"
             icon="i-heroicons-arrow-top-right-on-square"
-            class="hidden md:flex absolute top-6 right-6 z-20 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
+            class="hidden lg:flex absolute top-6 right-6 z-20 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
             aria-label="Acessar" />
 
           <!-- Overlays -->
           <div class="absolute inset-0 z-0">
             <!-- Gradient Overlay Base -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 md:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 md:to-transparent">
+              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 lg:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 lg:to-transparent">
             </div>
             <!-- Overlay Escuro no Hover -->
             <div
-              class="absolute inset-0 bg-[color:var(--color-surface)]/0 group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none group-hover:backdrop-blur-[3px] transition-all duration-500">
+              class="absolute inset-0 bg-[color:var(--color-surface)]/0 lg:group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none lg:group-hover:backdrop-blur-[3px] transition-all duration-500">
             </div>
           </div>
 
@@ -59,28 +59,28 @@
             <div class="flex flex-col gap-3">
               <!-- Title -->
               <h3
-                class="text-2xl md:text-3xl font-bold capitalize text-[color:var(--color-on-surface)] md:text-white drop-shadow-sm transition-transform duration-500 md:group-hover:-translate-y-1">
+                class="text-2xl md:text-3xl font-bold capitalize text-[color:var(--color-on-surface)] lg:text-white drop-shadow-sm transition-transform duration-500 lg:group-hover:-translate-y-1">
                 {{ project.titulo }}
               </h3>
 
               <!-- Hover Reveal Block (Fade in + Slide up grid trick on Desktop) -->
               <div
-                class="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
+                class="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                 <div class="overflow-hidden">
                   <!-- Inner wrapper for fade-in -->
                   <div
-                    class="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-3 md:pb-2">
+                    class="lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-3 lg:pb-2">
                     <div
-                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:text-gray-200 md:line-clamp-2"
+                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:hidden lg:text-gray-200 lg:line-clamp-2"
                       v-html="project.descricao" />
 
                     <!-- Tech chips & Mobile CTA -->
                     <div
-                      class="pt-2 md:pt-3 mt-1 flex flex-wrap items-center justify-between gap-4 md:border-t md:border-white/20">
+                      class="pt-2 md:pt-3 mt-1 flex flex-wrap items-center justify-between gap-4 lg:border-t lg:border-white/20">
                       <!-- Badges Minimalistas -->
                       <ul class="flex flex-wrap gap-2">
                         <li v-for="tag in project.tags" :key="tag"
-                          class="px-2.5 py-0.5 text-[11px] font-mono font-medium rounded-md uppercase tracking-wider md:bg-transparent md:text-white md:border md:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
+                          class="px-2.5 py-0.5 text-[11px] font-mono font-medium rounded-md uppercase tracking-wider lg:bg-transparent lg:text-white lg:border lg:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
                           {{ tag }}
                         </li>
                       </ul>
@@ -89,7 +89,7 @@
                       <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
                         :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
                         trailing-icon="i-heroicons-arrow-top-right-on-square"
-                        class="md:hidden shrink-0 font-mono font-medium rounded-full px-4"
+                        class="lg:hidden shrink-0 font-mono font-medium rounded-full px-4"
                         style="color: var(--color-primary);">
                         Acessar</UButton>
                     </div>
