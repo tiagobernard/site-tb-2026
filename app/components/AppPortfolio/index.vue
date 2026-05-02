@@ -24,75 +24,81 @@
       </div>
 
       <!-- Project list -->
-      <ul v-else
-        class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:auto-rows-[220px] lg:auto-rows-[240px]">
+      <ul v-else class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:auto-rows-[240px]">
         <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage"
-          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end"
+          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col bg-[color:var(--color-surface)]"
           :class="[getBentoClasses(i), i === 5 && preview ? 'md:hidden lg:flex' : '']" :style="{
             animationDelay: `${i * 0.08}s`
           }">
 
-          <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy"
-            :sizes="i === 0 ? 'xs:100vw sm:100vw md:768px lg:900px' : 'xs:100vw sm:50vw md:400px'" format="webp"
-            class="absolute inset-0 w-full h-full object-cover -z-10" />
+          <!-- Image Layer: Stack on xs, sm, md | Absolute on Desktop (lg+) -->
+          <div
+            class="relative lg:absolute lg:inset-0 w-full h-56 sm:h-72 md:h-80 lg:h-full overflow-hidden rounded-t-3xl lg:rounded-3xl shrink-0 z-0">
+            <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy"
+              :sizes="i === 0 ? 'xs:100vw sm:100vw md:100vw lg:900px' : 'xs:100vw sm:50vw md:50vw lg:400px'"
+              format="webp"
+              class="w-full h-full object-cover transition-transform duration-700 lg:group-hover:scale-105" />
 
-          <!-- Desktop CTA Icon -->
-          <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
-            :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="ghost"
-            icon="i-heroicons-arrow-top-right-on-square"
-            class="hidden lg:flex absolute top-6 right-6 z-20 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
-            aria-label="Acessar" />
-
-          <!-- Overlays -->
-          <div class="absolute inset-0 z-0">
-            <!-- Gradient Overlay Base -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 lg:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 lg:to-transparent">
-            </div>
-            <!-- Overlay Escuro no Hover -->
-            <div
-              class="absolute inset-0 bg-[color:var(--color-surface)]/0 lg:group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none lg:group-hover:backdrop-blur-[3px] transition-all duration-500">
+            <!-- Desktop Overlays (lg+) -->
+            <div class="hidden lg:block absolute inset-0 z-10">
+              <!-- Gradient Overlay Base -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 lg:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 lg:to-transparent">
+              </div>
+              <!-- Hover Dark Overlay -->
+              <div
+                class="absolute inset-0 bg-[color:var(--color-surface)]/0 lg:group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none lg:group-hover:backdrop-blur-[3px] transition-all duration-500">
+              </div>
             </div>
           </div>
 
-          <!-- Project content -->
-          <div class="relative z-10 flex flex-col flex-1 p-5 md:p-6 md:h-full md:justify-end">
+          <!-- Desktop CTA Icon (Keep Absolute) -->
+          <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
+            :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="ghost"
+            icon="i-heroicons-arrow-top-right-on-square"
+            class="touch-visible-icon hidden lg:flex absolute top-6 right-6 z-30 opacity-0 -translate-y-2 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-300 bg-white/10 hover:bg-white/25 text-white rounded-full backdrop-blur-md border border-white/20"
+            aria-label="Acessar" />
+
+          <!-- Project Content Box: Solid background on xs, sm, md | Transparent on Desktop (lg+) -->
+          <div
+            class="relative z-20 flex flex-col flex-1 p-6 md:p-10 lg:p-6 lg:h-full lg:justify-end bg-[color:var(--color-surface)] lg:bg-transparent">
             <div class="flex flex-col gap-3">
               <!-- Title -->
               <h3
-                class="text-2xl md:text-3xl font-bold capitalize text-[color:var(--color-on-surface)] lg:text-white drop-shadow-sm transition-transform duration-500 lg:group-hover:-translate-y-1">
+                class="text-xl md:text-2xl lg:text-3xl font-bold capitalize text-[color:var(--color-on-surface)] lg:text-white drop-shadow-sm transition-transform duration-500 lg:group-hover:-translate-y-1">
                 {{ project.titulo }}
               </h3>
 
-              <!-- Hover Reveal Block (Fade in + Slide up grid trick on Desktop) -->
+              <!-- Content Block: Always visible on Mobile, Reveal on Hover on Desktop -->
               <div
                 class="grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-all duration-500 ease-out">
                 <div class="overflow-hidden">
-                  <!-- Inner wrapper for fade-in -->
+                  <!-- Inner wrapper -->
                   <div
-                    class="lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 flex flex-col gap-3 lg:pb-2">
+                    class="lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100 flex flex-col gap-3 lg:pb-2">
                     <div
-                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] md:hidden lg:text-gray-200 lg:line-clamp-2"
+                      class="text-sm leading-relaxed text-[color:var(--color-on-surface-variant)] lg:text-gray-200 lg:line-clamp-2"
                       v-html="project.descricao" />
 
                     <!-- Tech chips & Mobile CTA -->
                     <div
-                      class="pt-2 md:pt-3 mt-1 flex flex-wrap items-center justify-between gap-4 lg:border-t lg:border-white/20">
-                      <!-- Badges Minimalistas -->
+                      class="pt-5 mt-2 flex flex-wrap items-center justify-between gap-4 border-t border-[color:var(--color-on-surface)]/10 lg:border-white/20">
+                      <!-- Tags -->
                       <ul class="flex flex-wrap gap-2">
                         <li v-for="tag in project.tags" :key="tag"
-                          class="px-2.5 py-0.5 text-[11px] font-mono font-medium rounded-md uppercase tracking-wider lg:bg-transparent lg:text-white lg:border lg:border-white/30 bg-[color:var(--color-secondary-container)] text-[color:var(--color-secondary)] border border-transparent">
+                          class="px-2 py-0.5 text-[10px] font-mono font-medium rounded uppercase tracking-wider bg-[color:var(--color-surface-high)] text-[color:var(--color-on-surface-variant)] lg:bg-transparent lg:text-white lg:border lg:border-white/30 border border-white/10">
                           {{ tag }}
                         </li>
                       </ul>
 
-                      <!-- Mobile CTA (escondido no desktop já que usa ícone superior) -->
+                      <!-- Mobile/Touch Button -->
                       <UButton v-if="project.url_externa && project.url_externa.trim() !== ''" as="a"
-                        :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer" variant="soft"
-                        trailing-icon="i-heroicons-arrow-top-right-on-square"
-                        class="lg:hidden shrink-0 font-mono font-medium rounded-full px-4"
+                        :href="project.url_externa.trim()" target="_blank" rel="noopener noreferrer"
+                        variant="soft" size="sm" trailing-icon="i-heroicons-arrow-top-right-on-square"
+                        class="touch-visible-btn lg:hidden shrink-0 font-mono font-medium rounded-full px-6"
                         style="color: var(--color-primary);">
-                        Acessar</UButton>
+                        Acessar
+                      </UButton>
                     </div>
                   </div>
                 </div>
@@ -183,12 +189,12 @@ const paginatedItems = computed(() => {
 })
 
 const bentoClasses = [
-  'md:col-span-8 lg:col-span-8 md:row-span-2', // i=0: Destaque
-  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=1: Secundário
-  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=2: Secundário
-  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=3
-  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=4
-  'md:col-span-4 lg:col-span-4 md:row-span-1', // i=5
+  'md:col-span-8 lg:col-span-8 lg:row-span-2', // i=0: Destaque
+  'md:col-span-4 lg:col-span-4 lg:row-span-1', // i=1: Secundário
+  'md:col-span-4 lg:col-span-4 lg:row-span-1', // i=2: Secundário
+  'md:col-span-4 lg:col-span-4 lg:row-span-1', // i=3
+  'md:col-span-4 lg:col-span-4 lg:row-span-1', // i=4
+  'md:col-span-4 lg:col-span-4 lg:row-span-1', // i=5
   'md:col-span-4 lg:col-span-6 md:row-span-1', // i=6
   'md:col-span-4 lg:col-span-6 md:row-span-1', // i=7
   'md:col-span-4 lg:col-span-6 md:row-span-1', // i=8
@@ -269,5 +275,42 @@ onUnmounted(() => {
 
 .bento-card-fix:hover {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 30px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* 
+  ELITE TOUCH FIX: iPad Pro & Large Touch Devices 
+  Garante que o conteúdo seja legível e visível em dispositivos que não suportam hover,
+  mesmo que a tela seja grande o suficiente para disparar o layout Bento (lg).
+*/
+@media (hover: none) {
+  /* Força a expansão do grid de conteúdo */
+  :deep(.lg\:grid-rows-\[0fr\]) {
+    grid-template-rows: 1fr !important;
+  }
+
+  /* Força a opacidade do conteúdo interno */
+  :deep(.lg\:opacity-0) {
+    opacity: 1 !important;
+  }
+
+  /* Garante que o overlay seja escuro o suficiente para legibilidade do texto branco no Bento mode */
+  :deep(.lg\:via-\[color\:var\(--color-surface\)\]\/40) {
+    background-image: linear-gradient(to top, 
+      rgba(var(--color-surface-rgb, 18, 18, 18), 0.95), 
+      rgba(var(--color-surface-rgb, 18, 18, 18), 0.85) 60%, 
+      rgba(var(--color-surface-rgb, 18, 18, 18), 0.5)
+    ) !important;
+  }
+
+  /* Mostra o botão de acesso (que normalmente estaria oculto em lg) */
+  .touch-visible-btn {
+    display: flex !important;
+  }
+
+  /* Mostra o ícone flutuante superior (Bento Style) também no Touch */
+  :deep(.touch-visible-icon) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
 </style>
