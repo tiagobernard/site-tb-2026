@@ -24,16 +24,16 @@
       </div>
 
       <!-- Project list -->
-      <ul v-else class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:auto-rows-[220px] lg:auto-rows-[240px]">
+      <ul v-else
+        class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 md:auto-rows-[220px] lg:auto-rows-[240px]">
         <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage"
-          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end overflow-hidden"
+          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col justify-end"
           :class="[getBentoClasses(i), i === 5 && preview ? 'md:hidden lg:flex' : '']" :style="{
             animationDelay: `${i * 0.08}s`
           }">
 
-          <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy" 
-            :sizes="i === 0 ? 'xs:100vw sm:100vw md:768px lg:900px' : 'xs:100vw sm:50vw md:400px'"
-            format="webp"
+          <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy"
+            :sizes="i === 0 ? 'xs:100vw sm:100vw md:768px lg:900px' : 'xs:100vw sm:50vw md:400px'" format="webp"
             class="absolute inset-0 w-full h-full object-cover -z-10" />
 
           <!-- Desktop CTA Icon -->
