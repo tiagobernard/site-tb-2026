@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/" :class="['logo-wrapper inline-flex items-center font-mono font-bold tracking-tight outline-none focus-visible:ring-2 focus-visible:ring-primary rounded', sizeClasses[size]]" aria-label="Tiago Bernardes – Início">
+  <NuxtLink to="/" @click="scrollToTop" :class="['logo-wrapper inline-flex items-center font-mono font-bold tracking-tight outline-none focus-visible:ring-2 focus-visible:ring-primary rounded', sizeClasses[size]]" aria-label="Tiago Bernardes – Início">
     <span class="bracket font-mono opacity-80 text-[var(--color-primary)]">&lt;</span>
     <span class="gradient-text font-mono">tb</span>
     <span class="bracket font-mono opacity-80 text-[var(--color-primary)]">/&gt;</span>
@@ -13,6 +13,12 @@ const props = defineProps({
     default: 'md'
   }
 })
+
+const scrollToTop = () => {
+  if (import.meta.client) {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
 
 // Tamanho do símbolo <tb/>
 const sizeClasses = {
