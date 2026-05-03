@@ -26,14 +26,14 @@
       <!-- Project list -->
       <ul v-else class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:auto-rows-[240px]">
         <li v-for="(project, i) in paginatedItems" :key="project.id + '-' + currentPage"
-          class="reveal group relative bento-card-fix rounded-3xl transition-all duration-500 hover:-translate-y-1 flex flex-col bg-[color:var(--color-surface)]"
+          class="reveal group relative bento-card-fix transition-all duration-500 hover:-translate-y-1 flex flex-col bg-[color:var(--color-surface)]"
           :class="[getBentoClasses(i), i === 5 && preview ? 'md:hidden lg:flex' : '']" :style="{
             animationDelay: `${i * 0.08}s`
           }">
 
           <!-- Image Layer: Stack on xs, sm, md | Absolute on Desktop (lg+) -->
           <div
-            class="relative lg:absolute lg:inset-0 w-full h-56 sm:h-72 md:h-80 lg:h-full overflow-hidden rounded-t-3xl lg:rounded-3xl shrink-0 z-0">
+            class="relative lg:absolute lg:inset-0 w-full h-56 sm:h-72 md:h-80 lg:h-full shrink-0 z-0">
             <NuxtImg v-if="project.imagem" :src="project.imagem" alt="" loading="lazy"
               :sizes="i === 0 ? 'xs:100vw sm:100vw md:100vw lg:900px' : 'xs:100vw sm:50vw md:50vw lg:400px'"
               format="webp"
@@ -43,11 +43,11 @@
             <div class="hidden lg:block absolute inset-0 z-10">
               <!-- Gradient Overlay Base -->
               <div
-                class="absolute inset-0 bg-gradient-to-t from-[color:var(--color-surface)]/95 via-[color:var(--color-surface)]/85 lg:via-[color:var(--color-surface)]/40 to-[color:var(--color-surface)]/70 lg:to-transparent">
+                class="absolute inset-0 bg-gradient-to-t from-[color-mix(in_srgb,var(--color-surface)_95%,transparent)] via-[color-mix(in_srgb,var(--color-surface)_85%,transparent)] lg:via-[color-mix(in_srgb,var(--color-surface)_40%,transparent)] to-[color-mix(in_srgb,var(--color-surface)_70%,transparent)] lg:to-transparent">
               </div>
               <!-- Hover Dark Overlay -->
               <div
-                class="absolute inset-0 bg-[color:var(--color-surface)]/0 lg:group-hover:bg-[color:var(--color-surface)]/85 backdrop-blur-none lg:group-hover:backdrop-blur-[3px] transition-all duration-500">
+                class="absolute inset-0 bg-transparent lg:group-hover:bg-[color-mix(in_srgb,var(--color-surface)_85%,transparent)] backdrop-blur-none lg:group-hover:backdrop-blur-[3px] transition-all duration-500">
               </div>
             </div>
           </div>
@@ -294,11 +294,11 @@ onUnmounted(() => {
   }
 
   /* Garante que o overlay seja escuro o suficiente para legibilidade do texto branco no Bento mode */
-  :deep(.lg\:via-\[color\:var\(--color-surface\)\]\/40) {
+  :deep(.lg\:via-\[color-mix\(in_srgb\,var\(--color-surface\)_40\%\,transparent\)\]) {
     background-image: linear-gradient(to top, 
-      rgba(var(--color-surface-rgb, 18, 18, 18), 0.95), 
-      rgba(var(--color-surface-rgb, 18, 18, 18), 0.85) 60%, 
-      rgba(var(--color-surface-rgb, 18, 18, 18), 0.5)
+      color-mix(in srgb, var(--color-surface) 95%, transparent), 
+      color-mix(in srgb, var(--color-surface) 85%, transparent) 60%, 
+      color-mix(in srgb, var(--color-surface) 50%, transparent)
     ) !important;
   }
 
