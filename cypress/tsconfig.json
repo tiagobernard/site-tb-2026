@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}

@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:e2e": "cypress open",
+    "test:e2e:run": "start-server-and-test dev http://localhost:3000 'cypress run'"
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
@@ -24,6 +26,8 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.21"
+    "@iconify-json/simple-icons": "^1.2.21",
+    "cypress": "^13.17.0",
+    "start-server-and-test": "^2.0.10"
   }
 }
