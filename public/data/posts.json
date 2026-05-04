@@ -1,7 +1,7 @@
 [
     {
         "id": 7,
-        "imagem": "/imagens/blog/tiago-bernardes-alem-da-UX- arquitetura-por-tras-da-validacao-de-formularios.png",
+        "imagem": "/imagens/blog/tiago-bernardes-alem-da-ux-arquitetura-por-tras-da-validacao-de-formularios.webp",
         "titulo": "Além da UX: A arquitetura por trás da validação de formulários",
         "slug": "alem-da-ux-arquitetura-por-tras-da-validacao-de-formularios",
         "tags": [
@@ -16,7 +16,7 @@
     },
     {
         "id": 6,
-        "imagem": "/imagens/blog/tiago-bernardes-o-que-1998-pode-nos-ensinar-sobre-o-futuro-da-ia.png",
+        "imagem": "/imagens/blog/tiago-bernardes-o-que-1998-pode-nos-ensinar-sobre-o-futuro-da-ia.webp",
         "titulo": "O que 1998 pode nos ensinar sobre o futuro da IA?",
         "slug": "o-que-1998-pode-nos-ensinar-sobre-o-futuro-da-ia",
         "tags": [
@@ -31,7 +31,7 @@
     },
     {
         "id": 5,
-        "imagem": "/imagens/blog/tiago-bernardes-validacao-de-formularios-eager-vs-late-validation.png",
+        "imagem": "/imagens/blog/tiago-bernardes-validacao-de-formularios-eager-vs-late-validation.webp",
         "titulo": "Validação de Formulários: Eager vs. Late Validation",
         "slug": "validacao-de-formularios-eager-vs-late-validation",
         "tags": [
@@ -46,7 +46,7 @@
     },
     {
         "id": 4,
-        "imagem": "/imagens/blog/tiago-bernardes-blog-css-seletor-where.jpg",
+        "imagem": "/imagens/blog/tiago-bernardes-blog-css-seletor-where.webp",
         "titulo": "Um recurso incrível, otimize seu CSS com o seletor :where()",
         "slug": "otimize-seu-css-com-o-seletor-where",
         "tags": [
@@ -59,7 +59,7 @@
     },
     {
         "id": 3,
-        "imagem": "/imagens/blog/tiago-bernardes-blog-rest-api-wordpress-no-vuejs.jpeg",
+        "imagem": "/imagens/blog/tiago-bernardes-blog-rest-api-wordpress-no-vuejs.webp",
         "titulo": "Como Consumir Dados via REST API do WordPress com Vue.js",
         "slug": "como-consumir-dados-via-api-rest-do-wordpress-com-vuejs",
         "tags": [
@@ -72,7 +72,7 @@
     },
     {
         "id": 2,
-        "imagem": "/imagens/blog/tiago-bernardes-propriedade-align-content-css.jpeg",
+        "imagem": "/imagens/blog/tiago-bernardes-propriedade-align-content-css.webp",
         "titulo": "Alinhamento Vertical no CSS: A Evolução para Flex, Grid e Além",
         "slug": "alinhamento-vertical-css-aling-content",
         "tags": [
@@ -85,7 +85,7 @@
     },
     {
         "id": 1,
-        "imagem": "/imagens/blog/tiago-bernardes-tela-login-personalizada-wordpress-tiago-bernardes.png",
+        "imagem": "/imagens/blog/tiago-bernardes-tela-login-personalizada-wordpress-tiago-bernardes.webp",
         "titulo": "Personalizando a tela de login do wordpress sem uso de plugin",
         "slug": "tela-de-login-personalizada-wordpress",
         "tags": [
@@ -95,6 +95,6 @@
         ],
         "date": "22/08/2025",
         "resumo": "Tem como fazer de uma forma bem simples uma tela de login do wordpress personalizada, sem a necessidade de instalar plugin[...]",
-        "artigo": "<h3>Deixe sua tela de login do wordpress com a aparência do seu projeto</h3>\n<p>Na atualidade é comum encontrar plugins que fazem esse tipo de função. Geralmente é muito fácil o uso de plugin mas muitas vezes desnecessário. Contudo, para fazer uma tela de login do <a href=\"https://br.wordpress.org\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"wordpress (abre numa nova aba)\">wordpress</a> personalizada, não há necessidade de plugin.</p>\n<p>Com esse pequeno código abaixo, você pode personalizar a tela de login do seu wordpress.</p>\n<h3>Para que tudo aconteça...</h3>\n<p>Vamos incluir código a seguir no arquivo <strong>functions.php</strong> do seu tema. Existem duas formas de alterar o arquivo:</p>\n<ol>\n<li>Via painel do wordpress em <strong>Aparência</strong> &gt; <strong>Editor</strong></li>\n<li>Acessando o arquivo via <strong>FTP</strong> acesse o caminho <strong>wp-content</strong> &gt; <strong>themes</strong> &gt; <strong>SEU TEMA</strong> &gt; <strong>functions.php</strong> e utilizando um editor de código (VS Code, Sublime Text, etc...).</li>\n</ol>\n<p>Insira o código abaixo no final do do arquivo <strong>functions.php</strong></p>\n<pre>&lt;?php\n//Logo customizada na pagina de login (admin)\nfunction cutom_login_logo() {\necho \"&lt;style type=\\\"text/css\\\"&gt;\nbody.login {background:#ffffff!important; height:auto; margin: 0; background-size:100%;}\n#login {padding: 3% 0 0!important;}\nbody.login div#login h1 a {\nbackground-image: url(\".get_bloginfo('template_directory').\"images/logo.png);\n-webkit-background-size: 95%;\nbackground-size: 95%;\nmargin: 0 auto;\nwidth: 164px;\nheight:60px;\nbackground-color:#fff;\n}\n#backtoblog {margin: 0 0!important; padding-bottom:30px!important;}\n&lt;/style&gt;\";\n}\nadd_action( 'login_enqueue_scripts', 'cutom_login_logo' );\nadd_filter('login_headerurl', create_function('', 'return \"http://www.seusite.com.br\";'));\nadd_filter('login_headertitle', create_function('', 'return \"Nome do Site\";'));\n\n?&gt;</pre>\n<p>Com este código é possível substituir a logo do wordpress e alterar alguns estilos como background da logo e background da tela em si.</p>\n<p>Na linha 9, o caminho que a logo precisa se encontrar é a pasta images do seu tema.<br />As linhas 13 e 14, são largura e altura exatas da sua logo. <br />Insira a URL do seu site na linha 21 e o nome do seu site na linha 22.</p>\n<p>Estas são apenas algumas classes CSS da tela de login, você tem várias possibilidades de personalização como alterar cores de inputs e textos.</p>\n<p>Se você sabe e/ou já usou alguma outra forma de personalizar a tela de login, compartilhe conosco nos comentários.</p>\n<p>Bora compartilhar conhecimento! Até o próximo post.</p>\n\n"
+        "artigo": "<h3>Deixe sua tela de login do wordpress com a aparência do seu projeto</h3>\n<p>Na atualidade é comum encontrar plugins que fazem esse tipo de função. Geralmente é muito fácil o uso de plugin mas muitas vezes desnecessário. Contudo, para fazer uma tela de login do <a href=\"https://br.wordpress.org\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"wordpress (abre numa nova aba)\">wordpress</a> personalizada, não há necessidade de plugin.</p>\n<p>Com esse pequeno código abaixo, você pode personalizar a tela de login do seu wordpress.</p>\n<h3>Para que tudo aconteça...</h3>\n<p>Vamos incluir código a seguir no arquivo <strong>functions.php</strong> do seu tema. Existem duas formas de alterar o arquivo:</p>\n<ol>\n<li>Via painel do wordpress em <strong>Aparência</strong> &gt; <strong>Editor</strong></li>\n<li>Acessando o arquivo via <strong>FTP</strong> acesse o caminho <strong>wp-content</strong> &gt; <strong>themes</strong> &gt; <strong>SEU TEMA</strong> &gt; <strong>functions.php</strong> e utilizando um editor de código (VS Code, Sublime Text, etc...).</li>\n</ol>\n<p>Insira o código abaixo no final do do arquivo <strong>functions.php</strong></p>\n<pre>&lt;?php\n//Logo customizada na pagina de login (admin)\nfunction cutom_login_logo() {\necho \"&lt;style type=\\\"text/css\\\"&gt;\nbody.login {background:#ffffff!important; height:auto; margin: 0; background-size:100%;}\n#login {padding: 3% 0 0!important;}\nbody.login div#login h1 a {\nbackground-image: url(\".get_bloginfo('template_directory').\"images/logo.webp);\n-webkit-background-size: 95%;\nbackground-size: 95%;\nmargin: 0 auto;\nwidth: 164px;\nheight:60px;\nbackground-color:#fff;\n}\n#backtoblog {margin: 0 0!important; padding-bottom:30px!important;}\n&lt;/style&gt;\";\n}\nadd_action( 'login_enqueue_scripts', 'cutom_login_logo' );\nadd_filter('login_headerurl', create_function('', 'return \"http://www.seusite.com.br\";'));\nadd_filter('login_headertitle', create_function('', 'return \"Nome do Site\";'));\n\n?&gt;</pre>\n<p>Com este código é possível substituir a logo do wordpress e alterar alguns estilos como background da logo e background da tela em si.</p>\n<p>Na linha 9, o caminho que a logo precisa se encontrar é a pasta images do seu tema.<br />As linhas 13 e 14, são largura e altura exatas da sua logo. <br />Insira a URL do seu site na linha 21 e o nome do seu site na linha 22.</p>\n<p>Estas são apenas algumas classes CSS da tela de login, você tem várias possibilidades de personalização como alterar cores de inputs e textos.</p>\n<p>Se você sabe e/ou já usou alguma outra forma de personalizar a tela de login, compartilhe conosco nos comentários.</p>\n<p>Bora compartilhar conhecimento! Até o próximo post.</p>\n\n"
     }
 ]

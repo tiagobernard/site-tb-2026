@@ -3,7 +3,7 @@
         "id": 1092,
         "titulo": "Portfolio Tiago Bernardes 2026",
         "descricao": "<p>Versão 2026 do meu portfólio profissional, focado em GenAI e desenvolvimento web de alta performance com Nuxt 4 e Tailwind CSS v4.</p>",
-        "imagem": "/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://github.com/tiagobernard/site-tb-2026",
         "tags": [
             "Nuxt 4",
@@ -17,7 +17,7 @@
         "id": 1090,
         "titulo": "Site Tiago Bernardes",
         "descricao": "<p>Primeira versão do meu site com uso de frameworks depois de ser em WordPress desde 2004.</p>",
-        "imagem": "/imagens/portfolio/portfolio-tb-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-tb-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://github.com/tiagobernard/site-tb-vue",
         "tags": [
             "vuejs 3",
@@ -30,7 +30,7 @@
         "id": 1088,
         "titulo": "Attri",
         "descricao": "<p>Landing Page desenvolvida para a agência de marketing digital Attri de São Paulo/SP.</p>",
-        "imagem": "/imagens/portfolio/portfolio-attri-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-attri-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://tiagobernardes.com.br/projetos/attri/",
         "tags": [
             "html5",
@@ -44,7 +44,7 @@
         "id": 1086,
         "titulo": "Domani Soluções",
         "descricao": "<p>A Domani Soluções - Contabilidade Especializada, tem uma proposta inovadora para potencializar o crescimento de empresas.</p>",
-        "imagem": "/imagens/portfolio/portfolio-domani-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-domani-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://domanisolucoes.com.br/",
         "tags": [
             "wordpress",
@@ -56,7 +56,7 @@
         "id": 1084,
         "titulo": "A Quadrilha Djonga",
         "descricao": "<p>Projeto de loja virtual desenvolvido para a produtora musical do cantor Djonga A Quadrilha</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-quadrilha-djonga.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-quadrilha-djonga.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -69,7 +69,7 @@
         "id": 1082,
         "titulo": "Mango Garden",
         "descricao": "Em parceria com a agência Attri de São Paulo/SP, foi desenvolvido este belo projeto para o empreendimento imobiliário Mango Garden",
-        "imagem": "/imagens/portfolio/portfolio-mango-garden-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-mango-garden-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://lab82.dev/staging/mango-garden/",
         "tags": [
             "wordpress",
@@ -82,7 +82,7 @@
         "id": 1080,
         "titulo": "Cea do Brasil",
         "descricao": "Em parceria com a agência digital Pixal de São Bernardo do Campo, desenvolvemos este grande site para a Cea do Brasil, empresa de soluções para o tratamento de água.",
-        "imagem": "/imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.png",
+        "imagem": "/imagens/portfolio/portfolio-cea-do-brasil-tiago-bernardes-genai-dev.webp",
         "url_externa": "https://ceadobrasil.com.br/",
         "tags": [
             "wordpress",
@@ -93,7 +93,7 @@
         "id": 1073,
         "titulo": "Sofia Maia",
         "descricao": "<p>Mais um projeto de 2023, loja virtual desenvolvida em WordPress para a empresa Sofia Maia Alfaiataria para Mulheres</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-sofia-maia.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-sofia-maia.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -105,7 +105,7 @@
         "id": 1066,
         "titulo": "Ashtanga Yoga BH",
         "descricao": "<p>Website multilinguagem Ashtanga Yoga Belo Horizonte, projeto desenvolvido em 2023 em WordPress.</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-ashtanga-yoga.jpg",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-ashtanga-yoga.webp",
         "url_externa": "https://ashtangayogabh.com.br/",
         "tags": [
             "wordpress",
@@ -117,7 +117,7 @@
         "id": 1052,
         "titulo": "Clínica Neurocenterkids",
         "descricao": "<p>Projeto desenvolvido em novembro de 2022 usando o CMS WordPress em parceria com as agências Pixal e Base Comunicações para a Clínica Neurocenterkids localizada em Santo André, São Paulo.</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-neurocenterkids.jpg",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-neurocenterkids.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -128,7 +128,7 @@
         "id": 1046,
         "titulo": "Santuário Santa Luzia",
         "descricao": "<p>Projeto filantrópico com a intensão de evangelização de 2022 desenvolvido em WordPress para o Santuário Arquidiocesano Santa Luzia/MG</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-santuario-santaluzia.jpg",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-santuario-santaluzia.webp",
         "url_externa": "https://santuariosantaluzia.org",
         "tags": [
             "wordpress"
@@ -138,7 +138,7 @@
         "id": 1042,
         "titulo": "FC Transportes",
         "descricao": "<p>Projeto de 2022 desenvolvido em WordPress para a empresa de comercio exterior FC Transportes de Santa Luzia, Minas Gerais.</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-fctransportes.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-fctransportes.webp",
         "url_externa": "https://fctransportes.com.br/",
         "tags": [
             "wordpress",
@@ -149,7 +149,7 @@
         "id": 1039,
         "titulo": "Barba ONe",
         "descricao": "<p>Projeto de loja virtual desenvolvido em WordPress com Woocommerce. E-commerce que divulga cupons de descontos grandes promoções da internet.</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-barba-one.jpg",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-barba-one.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -161,7 +161,7 @@
         "id": 1037,
         "titulo": "VLMB",
         "descricao": "<p>Projeto desenvolvido em 2022 usando o CMS WordPress para o Agenciador de Negócios VLMB de São Bernardo do Campo, São Paulo</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-vlmb.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-vlmb.webp",
         "url_externa": "https://vlmb.com.br/",
         "tags": [
             "wordpress",
@@ -172,7 +172,7 @@
         "id": 1034,
         "titulo": "TAP Eletro",
         "descricao": "<p>Projeto de 2022 desenvolvido em WordPress para a fabricante do setor elétrico Tap Eletro de Contagem Minas Gerais.</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-tap-eletro.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-tap-eletro.webp",
         "url_externa": "https://tapeletro.com.br/",
         "tags": [
             "wordpress",
@@ -184,7 +184,7 @@
         "id": 1027,
         "titulo": "Servos Tratores",
         "descricao": "<p>Projeto de 2022 desenvolvido para o cliente Servos Tratores de Contagem Minas Gerais, vitrine virtual desenvolvida em WordPress com Woocommerce</p>",
-        "imagem": "/imagens/portfolio/lab82-site-wordpress-servos-tratores.png",
+        "imagem": "/imagens/portfolio/lab82-site-wordpress-servos-tratores.webp",
         "url_externa": "https://servostratores.com.br/",
         "tags": [
             "wordpress",
@@ -196,7 +196,7 @@
         "id": 904,
         "titulo": "bruck service",
         "descricao": "<p>O projeto Bruck Service foi desenvolvido para uma empresa que cuida de nossa segurança. O site institucional da Bruck, foi desenvolvido para divulgar sua excelência na prestação de serviços de combate e detecção contra incêndios.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-bruck-service.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-bruck-service.webp",
         "url_externa": "https://bruck.ind.br/",
         "tags": [
             "wordpress",
@@ -207,7 +207,7 @@
         "id": 897,
         "titulo": "universo b",
         "descricao": "<p>O e-commerce Universo B foi um projeto desenvolvido em parceria com a Pixal Design em 2021. Esta foi mais uma loja virtual que desenvolvemos com integração de pagamento, correios com a finalidade de cálculo de preço e prazo de frete e também com algumas transportadoras como opção de entrega. Além das integrações foi aplicado nessa loja virtual várias funcionalidades como lista de desejos, cupons de desconto, área do cliente e outras.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-universo-b.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-universo-b.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -219,7 +219,7 @@
         "id": 882,
         "titulo": "recirculo",
         "descricao": "<p>Projeto desenvolvido para uma empresa que cuida de nosso planeta. O site institucional da Recirculo Gerenciamento de Resíduos Industriais, foi desenvolvido juntamente com nossa grande parceira Pixal Design de São Bernardo do Campo/SP.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-recirculo-ambiental.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-recirculo-ambiental.webp",
         "url_externa": "https://recirculo.com.br/",
         "tags": [
             "wordpress",
@@ -230,7 +230,7 @@
         "id": 879,
         "titulo": "aline sabino moda íntima",
         "descricao": "<p>Projeto desenvolvido com muito carinho entregue em 2021 para esse exemplo de empreendedora que é Aline Sabino. Este foi mais um e-commerce que desenvolvemos com integrações diversas de pagamentos, os correios com a finalidade de cálculo de preço e prazo de frete, entrega própria e também com algumas transportadoras como opção de entrega. Além das integrações foi aplicado nessa loja virtual várias funcionalidades como lista de desejos, cupons de desconto, área do cliente e outras.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-aline-sabino.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-aline-sabino.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -242,7 +242,7 @@
         "id": 876,
         "titulo": "rainha da paz",
         "descricao": "<p>Projeto desenvolvido para a conceituada Associação Beneficente Comunidade de Amor Rainha da Paz. Uma ONG que acolhe e reabilita pessoas com deficiência e suas famílias. O projeto entregue em 2021 em parceria com agência Pixal Design da cidade de São Bernardo do Campo/SP, tem como diferencial o sistema de doações que é integrado com várias formas de doações proporcionando maior rapidez e segurança para seus doadores.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-rainha-da-paz.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-rainha-da-paz.webp",
         "url_externa": "https://abcrainhadapaz.org.br/",
         "tags": [
             "wordpress",
@@ -255,7 +255,7 @@
         "id": 873,
         "titulo": "butique das meias",
         "descricao": "<p>O e-commerce da Butique das meias é nosso primeiro projeto de 2021. Em parceria com a agência Sagenev de Belo Horizonte/MG. O projeto de loja virtual é 100% integrado com pagamentos em cartão de crédito e boleto bancário e também integrado com os correios com a finalidade de calcular preço e prazo dos fretes para seus clientes.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-butique-das-meias.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-butique-das-meias.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -267,7 +267,7 @@
         "id": 870,
         "titulo": "iza sabino",
         "descricao": "<p>Projeto desenvolvido com muito carinho no finalzinho de 2020 para a rapper mineira Iza Sabino.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-iza-sabino.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-iza-sabino.webp",
         "url_externa": "https://izasabino.com/",
         "tags": [
             "wordpress",
@@ -281,7 +281,7 @@
         "id": 861,
         "titulo": "patrícia duarte arquitetura",
         "descricao": "<p>Mais um belo projeto desenvolvido no ano de 2020 em parceria com a agência Pixal Design de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-patricia-duarte.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-patricia-duarte.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -293,7 +293,7 @@
         "id": 857,
         "titulo": "duarte design",
         "descricao": "<p>Realizado com o gerenciador de conteúdos mais utilizado no mundo em 2020 em parceria com a agência Pixal Design de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-duarte-design-1.jpg",
+        "imagem": "/imagens/portfolio/lab82-projetos-portfolio-duarte-design-1.webp",
         "url_externa": "https://duartedesign.com.br/",
         "tags": [
             "wordpress",
@@ -305,7 +305,7 @@
         "id": 402,
         "titulo": "hynove coleta ambiental",
         "descricao": "<p>Realizado com WordPress em 2019 em parceria com a agência Pixal Design de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/projeto-hynove-coleta-ambiental-tiago-bernardes.jpg",
+        "imagem": "/imagens/portfolio/projeto-hynove-coleta-ambiental-tiago-bernardes.webp",
         "url_externa": "https://hynove.com.br/",
         "tags": [
             "wordpress",
@@ -316,7 +316,7 @@
         "id": 262,
         "titulo": "Pedro Piscinas",
         "descricao": "<p>Realizado com WordPress no ano de 2019 diretamente com o cliente de BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-pedro-piscinas-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-pedro-piscinas-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -328,7 +328,7 @@
         "id": 259,
         "titulo": "Cuidadores BH",
         "descricao": "<p>Realizado com WordPress no ano de 2019 diretamente com o cliente de BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-cuidadores-bh-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-cuidadores-bh-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "https://cuidadoresbh.com.br/",
         "tags": [
             "wordpress",
@@ -341,7 +341,7 @@
         "id": 256,
         "titulo": "Christopher Bonella",
         "descricao": "<p>Realizado com WordPress em 2019 em parceria com a agência Pixal Design de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/portifolio-christopher-bonella-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-christopher-bonella-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -352,7 +352,7 @@
         "id": 253,
         "titulo": "PlugOffice",
         "descricao": "<p>Realizado com WordPress em 2019 em parceria com a agência Pixal Design de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/portifolio-plugoffice-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-plugoffice-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "https://plugoffice.com.br/",
         "tags": [
             "wordpress",
@@ -364,7 +364,7 @@
         "id": 250,
         "titulo": "JurisConecta",
         "descricao": "<p>Realizado com WordPress em 2019 em parceria com a agência Pixal de São Bernardo do Campo.</p>",
-        "imagem": "/imagens/portfolio/portifolio-jurisconecta-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-jurisconecta-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -376,7 +376,7 @@
         "id": 247,
         "titulo": "Viluwe Store",
         "descricao": "<p>Projeto próprio realizado com WordPress no ano de 2018 em Lagoa da Prata.</p>",
-        "imagem": "/imagens/portfolio/portifolio-viluwe-store-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-viluwe-store-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -388,7 +388,7 @@
         "id": 244,
         "titulo": "Marítimos Bar e Restaurante",
         "descricao": "<p>Realizado com WordPress no ano de 2017 diretamente com o cliente do Recife.</p>",
-        "imagem": "/imagens/portfolio/portifolio-maritimos-bar-tiago-bernardes-desenvolvedor-front-end.png",
+        "imagem": "/imagens/portfolio/portifolio-maritimos-bar-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -400,7 +400,7 @@
         "id": 239,
         "titulo": "Além do Jordão",
         "descricao": "<p>Realizado com WordPress no ano de 2017 diretamente com o cliente do Recife.</p>",
-        "imagem": "/imagens/portfolio/portifolio-alem-do-jordao-tiago-bernardes-desenvolvedor-front-end.png",
+        "imagem": "/imagens/portfolio/portifolio-alem-do-jordao-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -412,7 +412,7 @@
         "id": 236,
         "titulo": "MTB Club",
         "descricao": "<p>Projeto próprio realizado com WordPress no ano de 2016 em Lagoa da Prata.</p>",
-        "imagem": "/imagens/portfolio/portifolio-mtbclubbr-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-mtbclubbr-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -424,7 +424,7 @@
         "id": 233,
         "titulo": "Siquini BL",
         "descricao": "<p>Realizado com WordPress no ano de 2015 quando era colaborador da agência Animatto em BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-siquini-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-siquini-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -435,7 +435,7 @@
         "id": 230,
         "titulo": "MABG Family",
         "descricao": "<p>Realizado com WordPress no ano de 2015 diretamente com o cliente do Recife.</p>",
-        "imagem": "/imagens/portfolio/portifolio-mabg-family-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-mabg-family-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -446,7 +446,7 @@
         "id": 227,
         "titulo": "Bastão Mineiro",
         "descricao": "<p>Realizado com WordPress no ano de 2015 diretamente com o cliente de Santa Luzia.</p>",
-        "imagem": "/imagens/portfolio/portifolio-bastao-mineiro-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-bastao-mineiro-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "https://bastaomineiro.com.br/",
         "tags": [
             "wordpress",
@@ -458,7 +458,7 @@
         "id": 224,
         "titulo": "Accanto Turismo",
         "descricao": "<p>Realizado com WordPress no ano de 2014 em parceria com a agência digital Cliq Net do Recife.</p>",
-        "imagem": "/imagens/portfolio/portifolio-accanto-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-accanto-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -470,7 +470,7 @@
         "id": 218,
         "titulo": "I3 Gráfica Digital",
         "descricao": "<p>Realizado com WordPress no ano de 2013 quando era colaborador da agência digital Intermobile em BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-i3-grafica-digital-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-i3-grafica-digital-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -482,7 +482,7 @@
         "id": 211,
         "titulo": "Intermobile",
         "descricao": "<p>Realizado com WordPress no ano de 2013 quando era colaborador da agência digital Intermobile em BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-intermobile-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-intermobile-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -494,7 +494,7 @@
         "id": 208,
         "titulo": "Brasfrigo",
         "descricao": "<p>Realizado com o CMS WordPress no ano de 2013 quando era colaborador da agência Five em Belo Horizonte.</p>",
-        "imagem": "/imagens/portfolio/portifolio-brasfrigo-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-brasfrigo-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -505,7 +505,7 @@
         "id": 205,
         "titulo": "Neves & Villamil Advogados Associados",
         "descricao": "<p>Realizado com o CMS WordPress no ano de 2013 quando era colaborador da agência Five em Belo Horizonte.</p>",
-        "imagem": "/imagens/portfolio/portifolio-nvaa-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-nvaa-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -517,7 +517,7 @@
         "id": 198,
         "titulo": "Corrida na Ativa",
         "descricao": "<p>Realizado com o CMS WordPress no ano de 2013 quando era colaborador da agência Five em Belo Horizonte.</p>",
-        "imagem": "/imagens/portfolio/portifolio-corrida-na-ativa-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-corrida-na-ativa-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -529,7 +529,7 @@
         "id": 221,
         "titulo": "Sinasa Clube Card",
         "descricao": "<p>Realizado em WordPress no modo Multisite no ano de 2013 quando era colaborador da agência Five em BH.</p>",
-        "imagem": "/imagens/portfolio/portifolio-sinasa-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-sinasa-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -541,7 +541,7 @@
         "id": 191,
         "titulo": "Damp Electric",
         "descricao": "<p>Realizado com o CMS WordPress no ano de 2013 quando era colaborador da agência Five em Belo Horizonte.</p>",
-        "imagem": "/imagens/portfolio/portifolio-damp-eletric-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-damp-eletric-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -552,7 +552,7 @@
         "id": 186,
         "titulo": "Colégio Alumnus",
         "descricao": "<p>Realizado com o CMS WordPress no ano de 2012 quando era colaborador da agência Five em Belo Horizonte.</p>",
-        "imagem": "/imagens/portfolio/portifolio-colegio-alumnus-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-colegio-alumnus-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "wordpress",
@@ -564,7 +564,7 @@
         "id": 92,
         "titulo": "Universidade de Pernambuco",
         "descricao": "<p>Projeto executado em 2011 utilizando CMS Joomla.<br /> Neste período eu ocupava o cargo de Web Master na reitoria da UPE, onde desenvolvi vários outros projetos que não constam neste portfólio.</p>",
-        "imagem": "/imagens/portfolio/portifolio-upe-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-upe-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "joomla",
@@ -576,7 +576,7 @@
         "id": 90,
         "titulo": "Senai Pernambuco",
         "descricao": "<p>Projeto desenvolvido em 2011 utilizando o CMS Joomla.</p>",
-        "imagem": "/imagens/portfolio/portifolio-senai-pe-tiago-bernardes-desenvolvedor-front-end.jpg",
+        "imagem": "/imagens/portfolio/portifolio-senai-pe-tiago-bernardes-desenvolvedor-front-end.webp",
         "url_externa": "",
         "tags": [
             "joomla",
@@ -588,7 +588,7 @@
         "id": 78,
         "titulo": "Faculdade SENAI de Pernambuco",
         "descricao": "Site desenvolvido em 2009 para a Faculdade SENAI de Pernambuco.",
-        "imagem": "/imagens/portfolio/portifolio-faculdade-senai-pe-tiago-bernardes-desenvolvedor-front-ent.jpg",
+        "imagem": "/imagens/portfolio/portifolio-faculdade-senai-pe-tiago-bernardes-desenvolvedor-front-ent.webp",
         "url_externa": "",
         "tags": [
             "joomla",
@@ -600,7 +600,7 @@
         "id": 61,
         "titulo": "Portal Recife Vip",
         "descricao": "<p>Portal</p>",
-        "imagem": "/imagens/portfolio/portifolio-recifevip-tiago-bernardes-desenvolvedor-front-ent.jpg",
+        "imagem": "/imagens/portfolio/portifolio-recifevip-tiago-bernardes-desenvolvedor-front-ent.webp",
         "url_externa": "",
         "tags": [
             "html",

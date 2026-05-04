@@ -52,7 +52,8 @@
           <div class="reveal mt-10 flex flex-wrap gap-8" style="animation-delay: 0.4s;">
             <div v-for="stat in stats" :key="stat.label" class="flex flex-col">
               <span class="text-3xl font-bold" style="color: var(--color-primary);">{{ stat.value }}</span>
-              <span class="text-sm font-mono tracking-wide" style="color: var(--color-on-surface-variant);">{{ stat.label }}</span>
+              <span class="text-sm font-mono tracking-wide" style="color: var(--color-on-surface-variant);">{{
+                stat.label }}</span>
             </div>
           </div>
         </div>
@@ -71,15 +72,16 @@
           <div
             class="relative w-56 h-56 md:w-56 md:h-56 lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem] rounded-full p-[3px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             style="background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary), var(--color-primary-container));">
-            <NuxtImg src="/imagens/perfil/tiago-bernardes-genai-developer.png"
-              alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI"
+            <NuxtImg src="/imagens/perfil/tiago-bernardes-genai-developer.webp"
+              alt="Tiago Bernardes - Especialista em Desenvolvimento GenAI" preload
               class="w-full h-full object-cover rounded-full" style="background-color: var(--color-surface);"
               loading="eager" fetchpriority="high" width="400" height="400" format="webp" />
           </div>
         </div>
 
         <!-- Quote / Bio Card -->
-        <div class="reveal glass-panel rounded-2xl p-8 max-w-md w-full relative mt-auto" style="animation-delay: 0.35s;">
+        <div class="reveal glass-panel rounded-2xl p-8 max-w-md w-full relative mt-auto"
+          style="animation-delay: 0.35s;">
           <!-- Quote icon badge -->
           <div
             class="absolute -top-4 -left-4 w-10 h-10 rounded-xl flex items-center justify-center text-xl font-black leading-none"

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxt/image', '@nuxtjs/fontaine'],
 
   image: {
+    provider: 'none',
     format: ['webp'],
     screens: {
       xs: 320,
@@ -15,6 +16,11 @@ export default defineNuxtConfig({
       lg: 1024,
       xl: 1280
     }
+  },
+
+  nitro: {
+    preset: 'node-server',
+    serveStatic: true
   },
 
   app: {
