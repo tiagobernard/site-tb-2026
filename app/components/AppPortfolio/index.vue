@@ -127,7 +127,6 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios'
 import { ref, computed, onMounted, nextTick, watch, onUnmounted } from 'vue'
 
 interface PortfolioItem {
@@ -149,9 +148,17 @@ let handleResize: () => void
 const pageSize = computed(() => isTablet.value ? 11 : 10)
 const currentPage = ref(1)
 
-const data = ref<PortfolioItem[]>([])
-const pending = ref(true)
-const error = ref(null)
+const { data, pending, error } = useAsyncData('portfolio-data', async () => {
+  try {
+    return await $fetch<PortfolioItem[]>('/data/portfolio.json')
+  } catch (err) {
+    console.error('Failed to fetch portfolio:', err)
+    throw err
+  }
+}, {
+  server: false,
+  default: () => []
+})
 
 onMounted(async () => {
   handleResize = () => {
@@ -160,14 +167,6 @@ onMounted(async () => {
   handleResize()
   window.addEventListener('resize', handleResize)
 
-  try {
-    const response = await axios.get('/data/portfolio.json')
-    data.value = response.data
-  } catch (e: any) {
-    error.value = e
-  } finally {
-    pending.value = false
-  }
   await nextTick()
   initReveal()
 })

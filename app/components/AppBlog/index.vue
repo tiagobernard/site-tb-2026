@@ -79,7 +79,6 @@
 
 <script setup lang="ts">
 import { useScrollReveal } from '~/composables/useScrollReveal'
-import axios from 'axios'
 
 interface BlogPost {
   imagem: string
@@ -103,9 +102,9 @@ const props = defineProps({
 
 const { data: posts, pending, error } = useAsyncData('latest-blog-posts-' + props.limit, async () => {
   try {
-    const res = await axios.get<BlogPost[]>('/data/posts.json')
+    const data = await $fetch<BlogPost[]>('/data/posts.json')
     // Busca +1 artigo caso limit seja 3 para suprir o layout do tablet harmoniosamente
-    return res.data.slice(0, props.limit === 3 ? 4 : props.limit)
+    return data.slice(0, props.limit === 3 ? 4 : props.limit)
   } catch (err) {
     console.error('Failed to fetch blog posts:', err)
     throw err

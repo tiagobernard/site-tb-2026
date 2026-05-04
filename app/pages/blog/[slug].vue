@@ -56,7 +56,6 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import axios from 'axios'
 
 const route = useRoute()
 const slug = route.params.slug as string
@@ -72,8 +71,8 @@ interface BlogPost {
 }
 
 const { data: post, pending } = useAsyncData(`post-${slug}`, async () => {
-  const res = await axios.get<BlogPost[]>('/data/posts.json')
-  return res.data.find(p => p.slug === slug)
+  const data = await $fetch<BlogPost[]>('/data/posts.json')
+  return data.find(p => p.slug === slug)
 }, { server: false })
 
 useSeoMeta({
