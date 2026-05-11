@@ -25,3 +25,6 @@ logs
 
 # Antigravity Agents
 .agent
+
+# VS Code settings
+.vscode
