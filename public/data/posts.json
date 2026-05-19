@@ -1,5 +1,20 @@
 [
     {
+        "id": 8,
+        "imagem": "/imagens/blog/tiago-bernardes-engenharia-de-contexto.jpg",
+        "titulo": "Engenharia de Contexto: O Fim do Teatrinho e o Começo do Trabalho de Gente Grande com IA",
+        "slug": "engenharia-de-contexto-o-fim-do-teatrinho-e-o-comeco-do-trabalho-de-gente-grande-com-ia",
+        "tags": [
+            "IA",
+            "Engenharia de Contexto",
+            "GenAI",
+            "Estratégia"
+        ],
+        "date": "19/05/2026",
+        "resumo": "A revolução da IA não acontece no prompt que você digita, mas na fundação que você constrói antes. Entenda por que Engenharia de Contexto é o verdadeiro diferencial competitivo — e por que prompt engineering é só a superfície.",
+        "artigo": "<p>Vejo muita gente deslumbrada com a inteligência artificial, tratando cada nova ferramenta como uma varinha mágica que vai resolver todos os problemas. Na boa, isso não é inovação, é apenas o hype da novidade. O teatrinho das perguntas mágicas já cansou. Quem está no mercado de verdade sabe que a revolução não acontece no comando que você digita, mas na fundação que você constrói antes de digitar.</p>\n<p>Para quem trabalha com desenvolvimento e estratégia de forma sênior, a \"Engenharia de Prompt\" é apenas a superfície. O verdadeiro diferencial competitivo, o que separa os sistemas proprietários e estáveis das experiências amadoras e imprevisíveis, é a Engenharia de Contexto.</p>\n<h3>O Que É a Engenharia de Contexto na Prática?</h3>\n<p>Para entender a diferença, imagine dois cenários.</p>\n<p>No primeiro, o mais comum, você dá a uma ferramenta de IA apenas uma instrução solta: \"Escreva um resumo para o LinkedIn\". O resultado vai ser genérico, porque você não definiu o repertório. Você está pedindo para ela criar uma obra de arte usando uma paleta de cores aleatória.</p>\n<p>No segundo cenário, o da Engenharia de Contexto, você não faz apenas uma pergunta. Você prepara o terreno. Antes de pedir o resumo, você fornece a ela um dossiê organizado: quem é você, qual sua trajetória, quais suas conquistas principais, qual tom de voz você quer passar, e quem você quer atrair. Você está dando a ela a paleta de cores exata, os pincéis corretos e a intenção clara do quadro.</p>\n<p>Contexto é repertório. Engenharia de Contexto é a arte de organizar, filtrar e fornecer a biblioteca de conhecimento, as diretrizes de comportamento e a memória necessárias para que a IA possa raciocinar com precisão e consistência.</p>\n<h3>O Teto da Hype e a Arquitetura da Utilidade</h3>\n<p>A provocação que deixo é esta: enquanto muitos ainda estão brincando de fazer perguntas, os arquitetos da nova economia estão ocupados desenhando os fluxos de dados e as barreiras éticas que fundamentam essas respostas.</p>\n<p>Quem focar apenas em prompts vai atingir um teto de performance muito rápido. Suas soluções serão frágeis e fáceis de replicar. Quem dominar o contexto vai construir sistemas de inteligência que são, ao mesmo tempo, escaláveis, seguros e impossíveis de copiar — porque o contexto, a sua memória, a sua metodologia, o seu DNA de negócio, é propriedade sua.</p>\n<p>A IA não é uma varinha mágica; é uma máquina poderosíssima que precisa de operadores qualificados, e não apenas entusiastas, para extrair valor real.</p>"
+    },
+    {
         "id": 7,
         "imagem": "/imagens/blog/tiago-bernardes-alem-da-ux-arquitetura-por-tras-da-validacao-de-formularios.webp",
         "titulo": "Além da UX: A arquitetura por trás da validação de formulários",
