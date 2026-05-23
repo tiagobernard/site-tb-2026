@@ -1,5 +1,0 @@
-name = "site-tb-2026"
-compatibility_date = "2025-07-15"
-
-[assets]
-directory = ".output/public"
