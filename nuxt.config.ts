@@ -5,9 +5,10 @@ export default defineNuxtConfig({
       gaId: process.env.NUXT_PUBLIC_GA_ID
     }
   },
-
+  pages: true,
+  ssr: false,
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
 
   modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxt/image', '@nuxtjs/fontaine'],
@@ -26,7 +27,10 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'node-server',
-    serveStatic: true
+    serveStatic: true,
+    prerender: {
+      crawlLinks: true
+    }
   },
 
   app: {
