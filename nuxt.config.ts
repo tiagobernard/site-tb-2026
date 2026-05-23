@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     }
   },
   pages: true,
-  ssr: false,
+  ssr: true,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
