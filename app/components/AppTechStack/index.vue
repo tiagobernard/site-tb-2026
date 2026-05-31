@@ -15,7 +15,7 @@
       <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <li v-for="(tech, i) in techs" :key="tech.name"
           class="tech-card reveal group relative flex rounded-2xl cursor-default overflow-hidden glass-panel-subtle"
-          :class="[tech.core ? 'col-span-2' : 'col-span-1']" :style="{
+          :class="[tech.core ? 'col-span-2' : tech.wide ? 'col-span-1 md:col-span-2' : 'col-span-1']" :style="{
             '--i': i,
             '--brand-color': tech.brandColor,
             'animation-delay': `calc(0.04s * ${i})`,
@@ -24,14 +24,14 @@
           }">
 
           <!-- CORE Badge -->
-          <span v-if="tech.core"
+          <span v-if="tech.core || tech.badge"
             class="absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] uppercase tracking-widest font-bold border transition-colors duration-300 z-10"
             style="background-color: color-mix(in srgb, var(--color-on-surface-variant) 10%, transparent); color: var(--color-on-surface-variant); border-color: color-mix(in srgb, var(--color-on-surface-variant) 15%, transparent);">
             CORE
           </span>
 
           <div class="w-full h-full p-5 lg:p-6 flex relative z-10"
-            :class="tech.core ? 'flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5' : 'flex-col items-center justify-center gap-4 text-center'">
+            :class="tech.core ? 'flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5' : tech.wide ? 'flex-col md:flex-row items-center gap-4' : 'flex-col items-center justify-center gap-4 text-center'">
 
             <!-- Icon Box & Localized Glow -->
             <div class="relative flex items-center justify-center shrink-0">
@@ -42,16 +42,16 @@
 
               <div
                 class="tech-icon rounded-xl flex items-center justify-center transition-colors duration-300 relative z-10"
-                :class="tech.core ? 'w-14 h-14 sm:w-16 sm:h-16' : 'w-12 h-12'"
+                :class="(tech.core || tech.wide) ? 'w-14 h-14 sm:w-16 sm:h-16' : 'w-12 h-12'"
                 style="background-color: color-mix(in srgb, var(--color-on-surface-variant) 5%, transparent); color: var(--color-on-surface-variant);">
-                <UIcon :name="tech.icon" :class="tech.core ? 'w-7 h-7 sm:w-8 sm:h-8' : 'w-6 h-6'" />
+                <UIcon :name="tech.icon" :class="(tech.core || tech.wide) ? 'w-7 h-7 sm:w-8 sm:h-8' : 'w-6 h-6'" />
               </div>
             </div>
 
             <!-- Text Content -->
-            <div class="flex flex-col" :class="tech.core ? 'items-start text-left' : 'items-center'">
+            <div class="flex flex-col" :class="tech.core ? 'items-start text-left' : tech.wide ? 'items-center text-center md:items-start md:text-left' : 'items-center'">
               <p class="font-semibold transition-colors duration-300"
-                :class="tech.core ? 'text-base sm:text-lg' : 'text-sm'"
+                :class="tech.core ? 'text-base sm:text-lg' : tech.wide ? 'text-sm md:text-base' : 'text-sm'"
                 style="font-family: 'JetBrains Mono', monospace; color: var(--color-on-surface);">
                 {{ tech.name }}
               </p>
@@ -76,6 +76,8 @@ interface Tech {
   desc: string
   brandColor: string
   core?: boolean
+  wide?: boolean
+  badge?: boolean
 }
 
 const techs: Tech[] = [
@@ -85,6 +87,16 @@ const techs: Tech[] = [
   { name: 'Pinia', icon: 'i-simple-icons-pinia', desc: 'State Management', brandColor: '#FFD859' },
 
   // Linha 2
+  { name: 'React', icon: 'i-simple-icons-react', desc: 'UI Component Library', brandColor: '#61DAFB' },
+  { name: 'Redux', icon: 'i-simple-icons-redux', desc: 'State Management', brandColor: '#764ABC' },
+  { name: 'Next.js', icon: 'i-simple-icons-nextdotjs', desc: 'SSR & Full-stack React', brandColor: '#E5E7EB', core: true },
+
+  // Linha 3
+  { name: 'Vercel', icon: 'i-simple-icons-vercel', desc: 'Deploy & Edge Functions', brandColor: '#A3A3A3' },
+  { name: 'Cloudflare Pages', icon: 'i-simple-icons-cloudflarepages', desc: 'Deploy Estático & Edge Network', brandColor: '#F6821F', wide: true, badge: true },
+  { name: 'Cloudflare', icon: 'i-simple-icons-cloudflare', desc: 'CDN & Segurança Web', brandColor: '#F6821F' },
+
+  // Linha 4
   { name: 'TypeScript', icon: 'i-simple-icons-typescript', desc: 'Tipagem Estática & Segurança', brandColor: '#3178C6' },
   { name: 'Node.js', icon: 'i-simple-icons-nodedotjs', desc: 'Runtime Javascript', brandColor: '#5FA04E' },
   { name: 'n8n', icon: 'i-simple-icons-n8n', desc: 'Automação de Workflows Avançada', brandColor: '#EA4B71', core: true },
