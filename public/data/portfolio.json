@@ -1,16 +1,28 @@
 [
     {
+        "id": 1094,
+        "titulo": "Lab82 Agência Digital",
+        "descricao": "<p>Novo site da agência digital Lab82 especializada em Wordpress e aplicações com inteligência artificial. O site foi desenvolvido com design network neural e técnicas de orquestramento de agentes de inteligência artificial.</p>",
+        "imagem": "/imagens/portfolio/portfolio-lab82-2026-tiago-bernardes-genai-dev.png",
+        "url_externa": "https://www.lab82.dev",
+        "tags": [
+            "Next.js",
+            "React",
+            "Redux",
+            "Vercel"
+        ]
+    },
+    {
         "id": 1092,
-        "titulo": "Portfolio Tiago Bernardes 2026",
+        "titulo": "Tiago Bernardes",
         "descricao": "<p>Versão 2026 do meu portfólio profissional, focado em GenAI e desenvolvimento web de alta performance com Nuxt 4 e Tailwind CSS v4.</p>",
         "imagem": "/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp",
-        "url_externa": "https://github.com/tiagobernard/site-tb-2026",
+        "url_externa": "https://tiagobernardes.com.br",
         "tags": [
-            "Nuxt 4",
-            "Tailwind v4",
-            "Clean Code",
-            "High Performance",
-            "Software Architecture"
+            "Nuxt.js",
+            "Vue.js",
+            "Pinia",
+            "Cloudflare Pages"
         ]
     },
     {
@@ -36,8 +48,7 @@
             "html5",
             "css3",
             "figma",
-            "frontend",
-            "landing page"
+            "javascript"
         ]
     },
     {
