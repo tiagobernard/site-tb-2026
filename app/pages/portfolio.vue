@@ -48,13 +48,27 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const SITE_URL = config.public.siteUrl as string
+const PAGE_URL = `${SITE_URL}/portfolio`
+const OG_IMAGE = `${SITE_URL}/imagens/portfolio/lab82-site-wordpress-quadrilha-djonga.webp`
+
 useSeoMeta({
   title: 'Portfólio Completo | Projetos Reais de Desenvolvimento Web',
   description: 'Explore mais de duas décadas construindo soluções digitais premium: e-commerces, sites institucionais, plataformas educacionais e sistemas web sob medida.',
   ogTitle: 'Portfólio Completo | Tiago Bernardes',
   ogDescription: 'Mais de duas décadas de experiência. Do e-commerce ao sistema web sob medida — veja o histórico de projetos reais e soluções digitais de alta performance.',
-  ogImage: '/imagens/portfolio/lab82-site-wordpress-quadrilha-djonga.png',
+  ogImage: OG_IMAGE,
+  ogUrl: PAGE_URL,
+  ogType: 'website',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Portfólio Completo | Tiago Bernardes',
+  twitterDescription: 'Mais de duas décadas de experiência. Do e-commerce ao sistema web sob medida — veja o histórico de projetos reais e soluções digitais de alta performance.',
+  twitterImage: OG_IMAGE,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: PAGE_URL }],
 })
 
 definePageMeta({

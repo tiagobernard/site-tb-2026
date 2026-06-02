@@ -36,13 +36,27 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const SITE_URL = config.public.siteUrl as string
+const PAGE_URL = `${SITE_URL}/posts`
+const OG_IMAGE = `${SITE_URL}/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp`
+
 useSeoMeta({
   title: 'Artigos e Insights | Desenvolvimento Web, UI/UX & Performance',
   description: 'Acompanhe tutoriais, dicas de performance, novidades do ecossistema front-end e reflexões sobre design de UI/UX e arquitetura de desenvolvimento de software.',
   ogTitle: 'Artigos e Insights | Tiago Bernardes',
   ogDescription: 'Tutoriais, dicas de performance, novidades do ecossistema front-end e reflexões sobre design de UI/UX e desenvolvimento de software.',
-  ogImage: '/data/tiago-bernardes-blog-banner.png',
+  ogImage: OG_IMAGE,
+  ogUrl: PAGE_URL,
+  ogType: 'website',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Artigos e Insights | Tiago Bernardes',
+  twitterDescription: 'Tutoriais, dicas de performance, novidades do ecossistema front-end e reflexões sobre design de UI/UX e desenvolvimento de software.',
+  twitterImage: OG_IMAGE,
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: PAGE_URL }],
 })
 
 definePageMeta({

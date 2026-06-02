@@ -1,8 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readFileSync } from 'node:fs'
+
+interface Post { slug: string }
+const posts: Post[] = JSON.parse(readFileSync('./public/data/posts.json', 'utf-8'))
+
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      gaId: process.env.NUXT_PUBLIC_GA_ID
+      gaId: process.env.NUXT_PUBLIC_GA_ID,
+      siteUrl: 'https://tiagobernardes.com.br'
     }
   },
   pages: true,
@@ -29,13 +35,26 @@ export default defineNuxtConfig({
     preset: 'static',
     serveStatic: true,
     prerender: {
-      crawlLinks: true
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/posts',
+        '/portfolio',
+        '/sitemap.xml',
+        ...posts.map(p => `/blog/${p.slug}`),
+      ]
     }
   },
 
   app: {
     baseURL: '/',
     head: {
+      htmlAttrs: { lang: 'pt-BR' },
+      meta: [
+        { property: 'og:site_name', content: 'Tiago Bernardes' },
+        { property: 'og:locale', content: 'pt_BR' },
+        { name: 'robots', content: 'index, follow, max-image-preview:large' },
+      ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },

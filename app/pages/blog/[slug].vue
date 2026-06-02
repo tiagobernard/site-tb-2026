@@ -55,12 +55,13 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-
 const route = useRoute()
 const slug = route.params.slug as string
+const config = useRuntimeConfig()
+const SITE_URL = config.public.siteUrl as string
 
 interface BlogPost {
+  id: number
   imagem: string
   titulo: string
   slug: string
@@ -72,17 +73,69 @@ interface BlogPost {
 
 const { data: post, pending } = useAsyncData(`post-${slug}`, async () => {
   const data = await $fetch<BlogPost[]>('/data/posts.json')
-  return data.find(p => p.slug === slug)
-}, { server: false })
+  return data.find(p => p.slug === slug) ?? null
+})
+
+const pageUrl = `${SITE_URL}/blog/${slug}`
+
+function isoDate(ddmmyyyy: string): string {
+  const [d, m, y] = ddmmyyyy.split('/')
+  return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`
+}
+
+const absoluteImage = computed(() =>
+  post.value?.imagem
+    ? `${SITE_URL}${post.value.imagem}`
+    : `${SITE_URL}/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp`
+)
 
 useSeoMeta({
-  title: () => post.value ? `${post.value.titulo} | Tiago Bernardes` : 'Carregando Artigo...',
-  description: () => post.value ? post.value.resumo : 'Confira mais um artigo no blog de Tiago Bernardes.',
-  ogTitle: () => post.value ? post.value.titulo : 'Artigo do Blog',
-  ogDescription: () => post.value ? post.value.resumo : '',
-  ogImage: () => post.value ? post.value.imagem : '',
+  title: () => post.value ? `${post.value.titulo} | Tiago Bernardes` : 'Artigo | Tiago Bernardes',
+  description: () => post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
+  ogTitle: () => post.value?.titulo ?? 'Artigo do Blog',
+  ogDescription: () => post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
+  ogImage: () => absoluteImage.value,
+  ogUrl: pageUrl,
+  ogType: 'article',
   twitterCard: 'summary_large_image',
+  twitterTitle: () => post.value?.titulo ?? 'Artigo do Blog',
+  twitterDescription: () => post.value?.resumo ?? '',
+  twitterImage: () => absoluteImage.value,
 })
+
+useHead(computed(() => ({
+  link: [{ rel: 'canonical', href: pageUrl }],
+  script: post.value
+    ? [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.value.titulo,
+          description: post.value.resumo,
+          image: `${SITE_URL}${post.value.imagem}`,
+          datePublished: isoDate(post.value.date),
+          author: {
+            '@type': 'Person',
+            name: 'Tiago Bernardes',
+            url: SITE_URL,
+            sameAs: [
+              'https://www.linkedin.com/in/tiagobernard/',
+              'https://github.com/tiagobernard',
+            ],
+          },
+          publisher: {
+            '@type': 'Person',
+            name: 'Tiago Bernardes',
+            url: SITE_URL,
+          },
+          url: pageUrl,
+          keywords: post.value.tags.join(', '),
+          mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+        }),
+      }]
+    : [],
+})))
 
 definePageMeta({
   layout: 'default',
