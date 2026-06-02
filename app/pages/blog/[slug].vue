@@ -55,6 +55,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ layout: 'default' })
+
 const route = useRoute()
 const slug = route.params.slug as string
 const config = useRuntimeConfig()
@@ -71,39 +73,51 @@ interface BlogPost {
   artigo: string
 }
 
-const { data: post, pending } = useAsyncData(`post-${slug}`, async () => {
-  const data = await $fetch<BlogPost[]>('/data/posts.json')
-  return data.find(p => p.slug === slug) ?? null
+// await garante que post.value está resolvido antes de qualquer useSeoMeta/useHead.
+// import.meta.server: lê direto do disco (nunca falha no prerender estático).
+// import.meta.client: usa $fetch para navegação SPA em produção.
+const { data: post, pending } = await useAsyncData(`post-${slug}`, async () => {
+  let allPosts: BlogPost[] = []
+
+  if (import.meta.server) {
+    const { readFileSync } = await import('node:fs')
+    const { resolve } = await import('node:path')
+    allPosts = JSON.parse(
+      readFileSync(resolve(process.cwd(), 'public/data/posts.json'), 'utf-8')
+    )
+  } else {
+    allPosts = await $fetch<BlogPost[]>('/data/posts.json')
+  }
+
+  return allPosts.find(p => p.slug === slug) ?? null
 })
 
 const pageUrl = `${SITE_URL}/blog/${slug}`
+const postImage = post.value?.imagem
+  ? `${SITE_URL}${post.value.imagem}`
+  : `${SITE_URL}/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp`
 
 function isoDate(ddmmyyyy: string): string {
   const [d, m, y] = ddmmyyyy.split('/')
   return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`
 }
 
-const absoluteImage = computed(() =>
-  post.value?.imagem
-    ? `${SITE_URL}${post.value.imagem}`
-    : `${SITE_URL}/imagens/portfolio/portfolio-tb-2026-tiago-bernardes-genai-dev.webp`
-)
-
+// Valores estáticos (não reactive getters) — post.value já está resolvido pelo await.
 useSeoMeta({
-  title: () => post.value ? `${post.value.titulo} | Tiago Bernardes` : 'Artigo | Tiago Bernardes',
-  description: () => post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
-  ogTitle: () => post.value?.titulo ?? 'Artigo do Blog',
-  ogDescription: () => post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
-  ogImage: () => absoluteImage.value,
+  title: post.value ? `${post.value.titulo} | Tiago Bernardes` : 'Artigo | Tiago Bernardes',
+  description: post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
+  ogTitle: post.value?.titulo ?? 'Artigo do Blog',
+  ogDescription: post.value?.resumo ?? 'Confira mais um artigo no blog de Tiago Bernardes.',
+  ogImage: postImage,
   ogUrl: pageUrl,
   ogType: 'article',
   twitterCard: 'summary_large_image',
-  twitterTitle: () => post.value?.titulo ?? 'Artigo do Blog',
-  twitterDescription: () => post.value?.resumo ?? '',
-  twitterImage: () => absoluteImage.value,
+  twitterTitle: post.value?.titulo ?? 'Artigo do Blog',
+  twitterDescription: post.value?.resumo ?? '',
+  twitterImage: postImage,
 })
 
-useHead(computed(() => ({
+useHead({
   link: [{ rel: 'canonical', href: pageUrl }],
   script: post.value
     ? [{
@@ -113,7 +127,7 @@ useHead(computed(() => ({
           '@type': 'BlogPosting',
           headline: post.value.titulo,
           description: post.value.resumo,
-          image: `${SITE_URL}${post.value.imagem}`,
+          image: postImage,
           datePublished: isoDate(post.value.date),
           author: {
             '@type': 'Person',
@@ -135,10 +149,6 @@ useHead(computed(() => ({
         }),
       }]
     : [],
-})))
-
-definePageMeta({
-  layout: 'default',
 })
 </script>
 
