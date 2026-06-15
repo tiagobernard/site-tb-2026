@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/tiagobernard/projetos/TIAGO/site-tb-2026 diff \"app/pages/blog/[slug].vue\")",
+      "Bash(git add *)",
+      "Bash(git -C /Users/tiagobernard/projetos/TIAGO/site-tb-2026 commit -m ' *)",
+      "Bash(git *)"
+    ]
+  }
+}

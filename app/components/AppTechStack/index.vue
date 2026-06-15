@@ -12,7 +12,7 @@
       </div>
 
       <!-- Bento Grid -->
-      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 md:auto-rows-fr">
         <li v-for="(tech, i) in techs" :key="tech.name"
           class="tech-card reveal group relative flex rounded-2xl cursor-default overflow-hidden glass-panel-subtle"
           :class="[tech.core ? 'col-span-2' : tech.wide ? 'col-span-1 md:col-span-2' : 'col-span-1']" :style="{
@@ -81,40 +81,40 @@ interface Tech {
 }
 
 const techs: Tech[] = [
-  // Linha 1
+  // Linha 1 — Vue ecosystem | core(2) + reg(1) + reg(1) = 4 cols
   { name: 'Nuxt 4', icon: 'i-simple-icons-nuxtdotjs', desc: 'SSR & Arquitetura Escalável', brandColor: '#00DC82', core: true },
   { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs', desc: 'Progressive Framework', brandColor: '#4FC08D' },
   { name: 'Pinia', icon: 'i-simple-icons-pinia', desc: 'State Management', brandColor: '#FFD859' },
 
-  // Linha 2
+  // Linha 2 — React ecosystem | reg(1) + reg(1) + core(2) = 4 cols
   { name: 'React', icon: 'i-simple-icons-react', desc: 'UI Component Library', brandColor: '#61DAFB' },
   { name: 'Redux', icon: 'i-simple-icons-redux', desc: 'State Management', brandColor: '#764ABC' },
   { name: 'Next.js', icon: 'i-simple-icons-nextdotjs', desc: 'SSR & Full-stack React', brandColor: '#E5E7EB', core: true },
 
-  // Linha 3
-  { name: 'Vercel', icon: 'i-simple-icons-vercel', desc: 'Deploy & Edge Functions', brandColor: '#A3A3A3' },
-  { name: 'Cloudflare Pages', icon: 'i-simple-icons-cloudflarepages', desc: 'Deploy Estático & Edge Network', brandColor: '#F6821F', wide: true, badge: true },
-  { name: 'Cloudflare', icon: 'i-simple-icons-cloudflare', desc: 'CDN & Segurança Web', brandColor: '#F6821F' },
-
-  // Linha 4
-  { name: 'TypeScript', icon: 'i-simple-icons-typescript', desc: 'Tipagem Estática & Segurança', brandColor: '#3178C6' },
+  // Linha 3 — Linguagens | core(2) + reg(1) + reg(1) = 4 cols
+  { name: 'TypeScript', icon: 'i-simple-icons-typescript', desc: 'Tipagem Estática & Segurança', brandColor: '#3178C6', core: true },
   { name: 'Node.js', icon: 'i-simple-icons-nodedotjs', desc: 'Runtime Javascript', brandColor: '#5FA04E' },
-  { name: 'n8n', icon: 'i-simple-icons-n8n', desc: 'Automação de Workflows Avançada', brandColor: '#EA4B71', core: true },
-
-  // Linha 3
-  { name: 'OpenProject', icon: 'i-simple-icons-openproject', desc: 'Engenharia de Gestão', brandColor: '#0B599E', core: true },
   { name: 'Python', icon: 'i-simple-icons-python', desc: 'Backend & Data', brandColor: '#3776AB' },
-  { name: 'PostgreSQL', icon: 'i-simple-icons-postgresql', desc: 'Persistência Relacional', brandColor: '#336791' },
 
-  // Linha 4
+  // Linha 4 — Deploy & Infra | reg(1) + core(2) + reg(1) = 4 cols
+  { name: 'Vercel', icon: 'i-simple-icons-vercel', desc: 'AI SDK & Edge Functions', brandColor: '#A3A3A3' },
+  { name: 'Cloudflare', icon: 'i-simple-icons-cloudflare', desc: 'Pages & Workers & CDN', brandColor: '#F6821F', core: true },
   { name: 'Docker', icon: 'i-simple-icons-docker', desc: 'Containerização', brandColor: '#2496ED' },
-  { name: 'OpenAI', icon: 'i-simple-icons-openai', desc: 'Integração de LLMs', brandColor: '#10A37F' },
-  { name: 'Anthropic', icon: 'i-simple-icons-anthropic', desc: 'Claude & IA Avançada', brandColor: '#D97757', core: true },
 
-  // Linha 5
-  { name: 'Git', icon: 'i-simple-icons-git', desc: 'CI/CD & Controle de Versão', brandColor: '#F05032', core: true },
+  // Linha 5 — CI/CD & Automação | reg(1) + reg(1) + core(2) = 4 cols
+  { name: 'n8n', icon: 'i-simple-icons-n8n', desc: 'Automação de Workflows', brandColor: '#EA4B71' },
+  { name: 'GitHub Actions', icon: 'i-simple-icons-githubactions', desc: 'CI/CD Automatizado', brandColor: '#2088FF' },
+  { name: 'Git', icon: 'i-simple-icons-git', desc: 'Controle de Versão', brandColor: '#F05032', core: true },
+
+  // Linha 6 — Dados, QA & Performance | core(2) + reg(1) + reg(1) = 4 cols
+  { name: 'Supabase', icon: 'i-simple-icons-supabase', desc: 'PostgreSQL & Backend-as-a-Service Edge', brandColor: '#3ECF8E', core: true },
+  { name: 'Lighthouse', icon: 'i-simple-icons-lighthouse', desc: 'Auditoria de Performance', brandColor: '#F44B21' },
   { name: 'Cypress', icon: 'i-simple-icons-cypress', desc: 'E2E Testing', brandColor: '#69D3A7' },
-  { name: 'Tailwind CSS', icon: 'i-simple-icons-tailwindcss', desc: 'Estilização Utilitária', brandColor: '#06B6D4' }
+
+  // Linha 7 — Gestão, IA & UI | reg(1) + core(2) + reg(1) = 4 cols
+  { name: 'Tailwind CSS', icon: 'i-simple-icons-tailwindcss', desc: 'Estilização Utilitária', brandColor: '#06B6D4' },
+  { name: 'Anthropic', icon: 'i-simple-icons-anthropic', desc: 'MCP & IA Avançada', brandColor: '#D97757', core: true },
+  { name: 'OpenProject', icon: 'i-simple-icons-openproject', desc: 'Engenharia de Gestão', brandColor: '#0B599E' },
 ]
 
 useScrollReveal()
